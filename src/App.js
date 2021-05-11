@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import dataLayer from './dataLayer.js';
+import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
 
 export const DataContext = React.createContext();
 
@@ -10,6 +12,11 @@ export default function App() {
             dataLayer
         }}>
             <div className="App">
+                <nav className="nav-bar">
+                    <Link to="/">Home</Link>
+                    <Link to="/">Submit</Link>
+                    <Link to="/">About</Link>
+                </nav>
                 <h1>.pnGCAT with react</h1>
             </div>
         </DataContext.Provider>
