@@ -86,8 +86,63 @@ export default function Form({ data }) {
   // }, [])
 
   return (
-    <div>
-      <h2>Submit Form</h2>
+    <div className="form-container">
+      {/* <DataContext.Provide value={{
+        deletePngcat,
+        updatedPngcat
+      }}> */}
+        <form
+          onsubmit={onSubmit}
+          style={{
+            margin: "30px",
+            border: "1px solid black"
+          }}
+        >
+          DNA Sequence:{" "}
+          <input
+            type="text"
+            id="DNA_seg"
+            placeholder="DNA Sequence"
+            // onChange={/*onModelChange*/}
+            // value={/*DNA_seq*/}
+          />
+          <br />
+          SBOL Glyphs:{" "}
+          <input
+            type="text"
+            id="SBOL_Glyphs"
+            list="SBOL_Glyphs-list"
+            placeholder="SBOL_Glyphs"
+            // onChange={/*onModelChange*/}
+            // value={/*SBOL_Glyphs*/}
+          />
+            <datalist id="SBOL_Glyphs-list">
+              <option value="component" />
+              <option value="range" />
+              <option value="path"/>
+            </datalist>
+          <br />
+          Authors: {" "}
+          <input
+            type="text"
+            id="authors"
+            placeholder="Authors"
+            // onChange={/*onModelChange*/}
+            // value={/*authors*/}
+          />
+          <br />
+          DOI: {" "}
+          <input
+            type="text"
+            id="DOI"
+            placeholder="DOI"
+            // onChange={/*onModelChange*/}
+            // value={/*DOI*/}
+          />
+          <br />
+          <input type="submit" />
+        </form>
+      {/* </DataContext.Provide> */}
     </div>
   )
 }
