@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../App';
+import * as formStyle from './Form.module.css'
 
 export default function Form({ data }) {
   // DNA sequence useState('')
@@ -86,21 +87,18 @@ export default function Form({ data }) {
   // }, [])
 
   return (
-    <div className="form-container">
+    <div className={formStyle.formContainer}>
       {/* <DataContext.Provide value={{
         deletePngcat,
         updatedPngcat
       }}> */}
+      <h2 className={formStyle.header}>Form</h2>
         <form
           onsubmit={onSubmit}
-          style={{
-            margin: "30px",
-            border: "1px solid black",
-            padding: "20px",
-          }}
         >
           DNA Sequence:{" "}
           <input
+            className={formStyle.input}
             type="text"
             id="DNA_seg"
             placeholder="DNA Sequence"
@@ -108,32 +106,40 @@ export default function Form({ data }) {
             // value={/*DNA_seq*/}
           />
           <br />
-          SBOL Glyphs:{" "}
+          <br />
+          Glyphs:{" "}
           <input
+            className={formStyle.input}
             type="text"
             id="SBOL_Glyphs"
             placeholder="SBOL_Glyphs"
             // onChange={/*onModelChange*/}
             // value={/*SBOL_Glyphs*/}
           />
+          <br />
           Component:{" "}
           <input
+            className={formStyle.input}
             type="text"
             id="component"
             placeholder="functional component"
             // onChange={/*onModelChange*/}
             // value={/*SBOL_Glyphs.component*/}
           />
+          <br />
           Range:{" "}
           <input
+            className={formStyle.input}
             type="text"
             id="range"
             placeholder="range"
             // onChange={/*onModelChange*/}
             // value={/*SBOL_Glyphs.range*/}
           />
+          <br />
           Path:{" "}
           <input
+            className={formStyle.input}
             type="text"
             id="path"
             placeholder="image path"
@@ -141,8 +147,10 @@ export default function Form({ data }) {
             // value={/*SBOL_Glyphs.path*/}
           />
           <br />
+          <br />
           Authors: {" "}
           <input
+            className={formStyle.input}
             type="text"
             id="authors"
             placeholder="Authors"
@@ -150,14 +158,17 @@ export default function Form({ data }) {
             // value={/*authors*/}
           />
           <br />
+          <br />
           DOI: {" "}
           <input
+            className={formStyle.input}
             type="text"
             id="DOI"
             placeholder="DOI"
             // onChange={/*onModelChange*/}
             // value={/*DOI*/}
           />
+          <br />
           <br />
           <input type="submit" />
         </form>
