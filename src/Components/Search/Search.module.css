@@ -1,0 +1,28 @@
+.searchContainer {
+  color: #dbedf3;
+  margin: 30px;
+  border: 1px solid #dbedf3;
+  padding: 10px;
+}
+.header {
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  padding: 15px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  color: #dbedf3;
+  background-color: #283149a1;
+  /* border-bottom: 2px solid #dbedf369; */
+}
+
+::placeholder {
+  color: #dbedf394;
+}
+
+.input:focus {
+  outline: none;
+}
