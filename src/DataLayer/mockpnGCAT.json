@@ -1,0 +1,199 @@
+[{
+  "_id": "aec89a5c-c1bf-4692-9d28-ff196c00039b",
+  "DNA_Seq": "2WFN8TAoPz",
+  "DOI": "243.6.227.125/24",
+  "Authors": [
+    {
+      "Author": "Ramonda See"
+    },
+    {
+      "Author": "Rustin Spadoni"
+    },
+    {
+      "Author": "Dwight Bean"
+    }
+  ],
+  "SBOL-VO-WS": "/duis/bibendum/morbi.js",
+  "SBOL_Glyphs": [
+    {
+      "Ontology_Term": "Bison bison",
+      "Gene_Label": "197514828-2",
+      "Location": {
+        "start": 30,
+        "end": 15
+      }
+    }
+  ]
+}, {
+  "_id": "499487e1-f104-4547-832c-a0c69df25655",
+  "DNA_Seq": "hYl1mE39UkVg",
+  "DOI": "98.133.136.196/12",
+  "Authors": [
+    {
+      "Author": "Templeton Fuller"
+    },
+    {
+      "Author": "Kean Buick"
+    }
+  ],
+  "SBOL-VO-WS": "/euismod/scelerisque/quam/turpis/adipiscing/lorem.jpg",
+  "SBOL_Glyphs": [
+    {
+      "Ontology_Term": "Paraxerus cepapi",
+      "Gene_Label": "681340795-3",
+      "Location": {
+        "start": 31,
+        "end": 53
+      }
+    },
+    {
+      "Ontology_Term": "Redunca redunca",
+      "Gene_Label": "323560188-0",
+      "Location": {
+        "start": 77,
+        "end": 45
+      }
+    },
+    {
+      "Ontology_Term": "Dendrocygna viduata",
+      "Gene_Label": "847666253-X",
+      "Location": {
+        "start": 66,
+        "end": 5
+      }
+    },
+    {
+      "Ontology_Term": "Canis aureus",
+      "Gene_Label": "446453954-8",
+      "Location": {
+        "start": 46,
+        "end": 52
+      }
+    },
+    {
+      "Ontology_Term": "Limosa haemastica",
+      "Gene_Label": "876958167-3",
+      "Location": {
+        "start": 38,
+        "end": 53
+      }
+    },
+    {
+      "Ontology_Term": "Rhea americana",
+      "Gene_Label": "815780144-3",
+      "Location": {
+        "start": 4,
+        "end": 43
+      }
+    },
+    {
+      "Ontology_Term": "Bubalus arnee",
+      "Gene_Label": "277043879-4",
+      "Location": {
+        "start": 66,
+        "end": 1
+      }
+    },
+    {
+      "Ontology_Term": "Sarkidornis melanotos",
+      "Gene_Label": "063926280-5",
+      "Location": {
+        "start": 62,
+        "end": 44
+      }
+    },
+    {
+      "Ontology_Term": "Grus antigone",
+      "Gene_Label": "199093041-7",
+      "Location": {
+        "start": 99,
+        "end": 95
+      }
+    },
+    {
+      "Ontology_Term": "Phalacrocorax niger",
+      "Gene_Label": "600534169-3",
+      "Location": {
+        "start": 18,
+        "end": 57
+      }
+    }
+  ]
+}, {
+  "_id": "ac3dfa06-8225-4aa9-bae0-3ff8842d71c8",
+  "DNA_Seq": "7PCbotIoZUR",
+  "DOI": "204.152.39.80/9",
+  "Authors": [
+    {
+      "Author": "Clint Lieber"
+    },
+    {
+      "Author": "Merv Couch"
+    },
+    {
+      "Author": "Keven Grinyov"
+    }
+  ],
+  "SBOL-VO-WS": "/id/nulla/ultrices/aliquet/maecenas.jpg",
+  "SBOL_Glyphs": [
+    {
+      "Ontology_Term": "Litrocranius walleri",
+      "Gene_Label": "259569116-3",
+      "Location": {
+        "start": 12,
+        "end": 77
+      }
+    },
+    {
+      "Ontology_Term": "Phoca vitulina",
+      "Gene_Label": "501903463-0",
+      "Location": {
+        "start": 84,
+        "end": 8
+      }
+    }
+  ]
+}, {
+  "_id": "6809b42d-a9f9-4852-89ae-b51002bd5297",
+  "DNA_Seq": "v1pOrIJ",
+  "DOI": "250.212.34.95/18",
+  "Authors": [
+    {
+      "Author": "Sasha Hyrons"
+    },
+    {
+      "Author": "Iver Hellewell"
+    },
+    {
+      "Author": "Nichole Elcock"
+    },
+    {
+      "Author": "Nicolas Drepp"
+    }
+  ],
+  "SBOL-VO-WS": "/pharetra/magna/vestibulum.jpg",
+  "SBOL_Glyphs": [
+    {
+      "Ontology_Term": "Toxostoma curvirostre",
+      "Gene_Label": "159593417-0",
+      "Location": {
+        "start": 18,
+        "end": 80
+      }
+    }
+  ]
+}, {
+  "_id": "b331ae26-f4bb-4244-9540-8eb0ef45f144",
+  "DNA_Seq": "jzOd0OeauacS",
+  "DOI": "210.80.20.85/13",
+  "Authors": [
+    {
+      "Author": "Magnum Blasgen"
+    }
+  ],
+  "SBOL-VO-WS": "/porttitor/lorem/id/ligula/suspendisse/ornare/consequat.png",
+  "SBOL_Glyphs": [
+
+  ]
+}]
+​

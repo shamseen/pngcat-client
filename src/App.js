@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import dataLayer from './dataLayer.js';
+import dataLayer from './DataLayer/dataLayer.js';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Search from './Components/Search/Search'
 import Navbar from './Components/Navbar/Navbar'

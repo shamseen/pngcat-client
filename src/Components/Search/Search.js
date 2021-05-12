@@ -1,17 +1,18 @@
 import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../App';
+import SearchResults from '../SearchResults/SearchResults'
 import * as searchStyle from './Search.module.css'
 
 export default function Search() {
   const [apiData, getApiDate] = useState('mock.json')
-  const[searchString, setSearchString] = useState('author')
+  const [searchString, setSearchString] = useState('author')
 
-  // const url = `url`
+  // const url = `genbankurl`
 
-  // GET
+  // GET x3 for author,keyword, and DOI
   const getAPI = async () => {
     try {
-      const res = await fetch('url')
+      const res = await fetch('genbankurl')
       const data = await result.json()
     } catch (err) {
       console.log(err)
@@ -51,11 +52,11 @@ export default function Search() {
             // value={/*sarchString */}
           />
           <br />
-          DOI:{" "}
+          Article DOI:{" "}
           <input
             className={searchStyle.input}
             type="text"
-            id="DOI"
+            id="articleDOI"
             placeholder="DOI link"
             onChange={handleChange}
             // value={/*searchString */}
@@ -63,12 +64,12 @@ export default function Search() {
             // value={/*SBOL_Glyphs*/}
           />
           <br />
-          Component:{" "}
+          Keyword:{" "}
           <input
             className={searchStyle.input}
             type="text"
-            id="component"
-            placeholder="functional component"
+            id="keyword"
+            placeholder="keywords"
             onChange={handleChange}
             // value={/*searchString */}
             // onChange={/*onModelChange*/}
@@ -77,10 +78,12 @@ export default function Search() {
           <br />
           <input type="submit" value="Search" className={searchStyle.searchBtn}/>
         </form>
+        <div className={searchStyle.resultContainer}>
+          <SearchResults />
+        </div>
       {/* </DataContext.Provide> */}
     </div>
   )
 }
-
 
 
