@@ -95,7 +95,8 @@ export default function Form({ data }) {
           onsubmit={onSubmit}
           style={{
             margin: "30px",
-            border: "1px solid black"
+            border: "1px solid black",
+            padding: "20px",
           }}
         >
           DNA Sequence:{" "}
@@ -111,16 +112,34 @@ export default function Form({ data }) {
           <input
             type="text"
             id="SBOL_Glyphs"
-            list="SBOL_Glyphs-list"
             placeholder="SBOL_Glyphs"
             // onChange={/*onModelChange*/}
             // value={/*SBOL_Glyphs*/}
           />
-            <datalist id="SBOL_Glyphs-list">
-              <option value="component" />
-              <option value="range" />
-              <option value="path"/>
-            </datalist>
+          Component:{" "}
+          <input
+            type="text"
+            id="component"
+            placeholder="functional component"
+            // onChange={/*onModelChange*/}
+            // value={/*SBOL_Glyphs.component*/}
+          />
+          Range:{" "}
+          <input
+            type="text"
+            id="range"
+            placeholder="range"
+            // onChange={/*onModelChange*/}
+            // value={/*SBOL_Glyphs.range*/}
+          />
+          Path:{" "}
+          <input
+            type="text"
+            id="path"
+            placeholder="image path"
+            // onChange={/*onModelChange*/}
+            // value={/*SBOL_Glyphs.path*/}
+          />
           <br />
           Authors: {" "}
           <input

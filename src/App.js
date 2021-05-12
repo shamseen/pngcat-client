@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import dataLayer from './dataLayer.js';
-import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Form from './Components/Forms/Form'
+import Navbar from './Components/Navbar/Navbar'
+import About from './Components/About/About'
 
 
 export const DataContext = React.createContext();
@@ -12,15 +14,13 @@ export default function App() {
         <DataContext.Provider value={{
             dataLayer
         }}>
-            <div className="App">
-                <nav className="nav-bar">
-                    <Link to="/">Home</Link>
-                    <Link to="/">Submit</Link>
-                    <Link to="/">About</Link>
-                </nav>
-                <h1>.pnGCAT with react</h1>
-                <Form />
-            </div>
+            <Router>
+                <Navbar />
+                <Switch>
+                    <Route exact path='/' render={() => <Form />} />
+                    <Route exact path='/About' render={() => <About />} />
+                </Switch>
+            </Router>
         </DataContext.Provider>
     );
 }
