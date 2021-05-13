@@ -1,22 +1,18 @@
-import React, { useState, useEffect } from "react";
-import dataLayer from './DataLayer/dataLayer.js';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Search from './Components/Search/Search'
-import Navbar from './Components/Navbar/Navbar'
-import About from './Components/About/About'
-
-
-export const DataContext = React.createContext();
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Search from './components/Search/Search'
+import Navbar from './components/Navbar/Navbar'
+import About from './components/About/About'
 
 export default function App() {
-    const [searchResults, setResults] = useState('');
+    const [searchResults, setResults] = useState([]);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const getAPI = async () => {
+
         try {
-            // getting and formatting data
             const response = await fetch("mockpnGCAT.json");
             const json = await response.json();
+            console.log(json)
 
             // updating state
             setResults(json);
@@ -26,18 +22,24 @@ export default function App() {
             console.log(err);
         }
     };
+
+    const handleSubmit = (e) => {
+        console.log('submitted');
+        e.preventDefault();
+        getAPI();
+    }
+
     return (
-        <DataContext.Provider value={{
-            searchResults,
-            handleSubmit
-        }}>
-            <Router>
-                <Navbar />
-                <Switch>
-                    <Route exact path='/' render={() => <Search />} />
-                    <Route exact path='/About' render={() => <About />} />
-                </Switch>
-            </Router>
-        </DataContext.Provider>
+
+        <Router>
+            <Navbar />
+            <Switch>
+                <Route exact path='/' render={() => <Search
+                    handleSubmit={handleSubmit}
+                    searchResults={searchResults} />}
+                />
+                <Route exact path='/About' render={() => <About />} />
+            </Switch>
+        </Router>
     );
 }

@@ -4,14 +4,20 @@ const SearchResults = ({ result }) => {
 
   return (
     <div id="result">
-      <h1>Results</h1>
-      {/* {mockpnGCAT.json.map = () => {
-        <div key={keyword.id} className="keyword">
-          <h1>keywords</h1>
-        </div>
-      })} */}
-      JSON
-      {JSON.stringify(result)}
+      <hr />
+      <hr />
+      {
+        Object.keys(result).map((prop, i) => {
+          return (
+            <div key={i}>
+              <h4>{prop}:</h4>
+              <span>{JSON.stringify(result[prop])}</span>
+              <br />
+              <br />
+            </div>
+          )
+        })
+      }
     </div>
   )
 }
