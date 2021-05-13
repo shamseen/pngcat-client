@@ -3,7 +3,10 @@ import { DataContext } from '../../App';
 import SearchResults from '../SearchResults/SearchResults'
 import * as searchStyle from './Search.module.css'
 
-export default function Search({ handleSubmit, searchResults }) {
+
+
+export default function Search() {
+  const { handleSubmit, searchResults } = useContext(DataContext);
 
   useEffect(async () => {
     console.log(searchResults)

@@ -1,8 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Search from './components/Search/Search'
-import Navbar from './components/Navbar/Navbar'
-import About from './components/About/About'
+import Search from './Components/Search/Search'
+import Navbar from './Components/Navbar/Navbar'
+import About from './Components/About/About'
+
+export const DataContext = React.createContext()
 
 export default function App() {
     const [searchResults, setResults] = useState([]);
@@ -31,15 +33,17 @@ export default function App() {
 
     return (
 
-        <Router>
-            <Navbar />
-            <Switch>
-                <Route exact path='/' render={() => <Search
-                    handleSubmit={handleSubmit}
-                    searchResults={searchResults} />}
-                />
-                <Route exact path='/About' render={() => <About />} />
-            </Switch>
-        </Router>
+        <DataContext.Provider value={{
+            searchResults,
+            handleSubmit
+        }}>
+            <Router>
+                <Navbar />
+                <Switch>
+                    <Route exact path='/' render={() => <Search />} />
+                    <Route exact path='/About' render={() => <About />} />
+                </Switch>
+            </Router>
+        </DataContext.Provider>
     );
 }

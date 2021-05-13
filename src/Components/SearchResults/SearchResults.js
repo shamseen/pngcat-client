@@ -5,7 +5,6 @@ const SearchResults = ({ result }) => {
   return (
     <div id="result">
       <hr />
-      <hr />
       {
         Object.keys(result).map((prop, i) => {
           return (
