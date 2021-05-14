@@ -1,0 +1,27 @@
+.navbarHeader {
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-weight: bolder;
+  background-color: #283149;
+  height: 50px;
+}
+
+.navbarNav {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navItem {
+  color: #dbedf3;
+  margin: 15px 15px;
+  padding: 2px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navItem:hover {
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 2px;
+}
