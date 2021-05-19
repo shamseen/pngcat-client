@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from 'react';
-import { DataContext } from '../../App';
-import SearchResults from '../SearchResults/SearchResults';
-import * as searchStyle from './Search.module.css';
+import { useContext, useEffect, useState } from "react";
+import { DataContext } from "../../App";
+import SearchResults from "../SearchResults/SearchResults";
+import * as searchStyle from "./Search.module.css";
 
 export default function Search() {
 	const { handleSubmit, searchResults } = useContext(DataContext);
@@ -19,8 +19,10 @@ export default function Search() {
 			<h2 className={searchStyle.header}>Search</h2>
 
 			{/* ------- Search form --------- */}
+			{/* ---- remove author, add DNAid ---- */}
+			{/* ---- rename DOI to study ID ---- */}
 			<form onSubmit={handleSubmit}>
-				Author:{' '}
+				Author:{" "}
 				<input
 					className={searchStyle.input}
 					type="text"
@@ -29,7 +31,7 @@ export default function Search() {
 					onChange={handleChange}
 				/>
 				<br />
-				Article DOI:{' '}
+				Article DOI:{" "}
 				<input
 					className={searchStyle.input}
 					type="text"
@@ -38,7 +40,7 @@ export default function Search() {
 					onChange={handleChange}
 				/>
 				<br />
-				Keyword:{' '}
+				Keyword:{" "}
 				<input
 					className={searchStyle.input}
 					type="text"
