@@ -1,13 +1,38 @@
-.shamContainer {
-  border: 1px solid #dbedf3;
-  color: #dbedf3;
-  margin: 30px;
-  padding: 20px;
+* {
+	list-style-type: none;
 }
 
-.henContainer {
-  border: 1px solid #dbedf3;
-  color: #dbedf3;
-  margin: 30px;
-  padding: 20px;
+.name {
+	color: #dbedf3;
+	text-align: center;
+}
+
+.profileContainer {
+	border: 1px solid #dbedf3;
+	color: #dbedf3;
+	margin: 30px;
+	padding: 20px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.imgAndDesContainer {
+	border: 1px solid #dbedf3;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.ul {
+	padding: 10px;
+	/* margin: 2px; */
+	border: 1px solid #dbedf3;
+}
+
+.p {
+	margin: 20px;
+	border: 1px solid #dbedf3;
+	padding: 20px;
 }
