@@ -26,17 +26,18 @@ export default function App() {
         }
     };
 
-    const searchAPI = (params) => {
+    const searchAPI = async (params) => {
         console.log('submitted');
 
-        console.log(JSON.stringify(params));
-        // try {
-        //     const response = await searchSequences(...params);
-        //     const json = await response.json();
+        // console.log(JSON.stringify(params));
+        try {
+            const json = await searchSequences(...params);
 
-        //     // updating state
-        //     setResults(json);
-        // }
+            // updating state
+            setResults(json);
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     return (
