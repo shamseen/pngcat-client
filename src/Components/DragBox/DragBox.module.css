@@ -51,3 +51,9 @@
   cursor: pointer;
   margin: 15px;
 }
+
+.flexbox button {
+  width: 80vw;
+  line-height: 50px;
+  cursor: pointer;
+}
