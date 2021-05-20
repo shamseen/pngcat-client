@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Board from "./Board";
 import Card from "./Card";
-import { glyphs } from "./Glyphs";
+import { glyphs as glyphNames } from "./Glyphs";
 import * as DragBoxStyle from "./DragBox.module.css";
 
 export default function DragBox({ handleSave }) {
-	const [pngcat, setPngcat] = useState([]);
 
 	const savePngcat = () => {
 		const glyphsToSave = [];
@@ -14,13 +13,15 @@ export default function DragBox({ handleSave }) {
 		const cardElements = document.getElementById('pngcat-board').childNodes;
 
 		// storing the glyph names as strings
+		// TO DO: let user label the gene
 		cardElements.forEach(c => {
-			glyphsToSave.push(c.id)
+			glyphsToSave.push({
+				"Gene_Label": "somegene",
+				"Ontology_Term": c.id
+			})
 		});
 
-		setPngcat(glyphsToSave);
-
-		handleSave(pngcat);
+		handleSave(glyphsToSave);
 	}
 
 	return (
@@ -31,7 +32,7 @@ export default function DragBox({ handleSave }) {
 
 				<Board id="glyph-bank" className={DragBoxStyle.board}>
 					{
-						glyphs.map((glyph, i) => {
+						glyphNames.map((glyph, i) => {
 							return (
 								<Card key={i} id={glyph} className={DragBoxStyle.card} draggable="true">
 									<img
