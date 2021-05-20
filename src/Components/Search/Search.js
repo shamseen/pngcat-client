@@ -23,12 +23,43 @@ export default function Search() {
     searchAPI([sequence, study, keyword]);
   }
 
-  return (
-    <div className={searchStyle.searchContainer}>
-      <h2 className={searchStyle.header}>Search</h2>
+	return (
+		<div className={searchStyle.searchContainer}>
+			<h2 className={searchStyle.header}>Search</h2>
 
-      {/* ------- Search form --------- */}
-      <form onSubmit={handleSubmit} >
+			{/* ------- Search form --------- */}
+			{/* ---- remove author, add DNAid ---- */}
+			{/* ---- rename DOI to study ID ---- */}
+			<form onSubmit={handleSubmit}>
+				Author:{" "}
+				<input
+					className={searchStyle.input}
+					type="text"
+					id="author"
+					placeholder="Author"
+					onChange={handleChange}
+				/>
+				<br />
+				Article DOI:{" "}
+				<input
+					className={searchStyle.input}
+					type="text"
+					id="articleDOI"
+					placeholder="DOI link"
+					onChange={handleChange}
+				/>
+				<br />
+				Keyword:{" "}
+				<input
+					className={searchStyle.input}
+					type="text"
+					id="keyword"
+					placeholder="keywords"
+					onChange={handleChange}
+				/>
+				<br />
+				<input type="submit" value="Search" className={searchStyle.searchBtn} />
+			</form>
 
         Sequence Id:{" "}
         <SearchTextInput state={sequence} updateState={setSeq} placeholder='CP034527' />
@@ -57,4 +88,3 @@ export default function Search() {
     </div>
   )
 }
-
