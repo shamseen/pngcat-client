@@ -4,7 +4,7 @@ import Card from "./Card";
 import { glyphs } from "./Glyphs";
 import * as DragBoxStyle from "./DragBox.module.css";
 
-export default function DragBox() {
+export default function DragBox({ handleSave }) {
 	const [pngcat, setPngcat] = useState([]);
 
 	const savePngcat = () => {
@@ -19,6 +19,8 @@ export default function DragBox() {
 		});
 
 		setPngcat(glyphsToSave);
+
+		handleSave(pngcat);
 	}
 
 	return (

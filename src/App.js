@@ -9,45 +9,49 @@ import ImageUploader from './Components/ImageUploader/ImageUploader';
 export const DataContext = React.createContext();
 
 export default function App() {
-	const [searchResults, setResults] = useState([]);
+    const [searchResults, setResults] = useState([]);
 
-	const getAPI = async () => {
-		try {
-			const response = await fetch('mockpnGCAT.json');
-			const json = await response.json();
-			console.log(json);
+    const getAPI = async () => {
+        try {
+            const response = await fetch('mockpnGCAT.json');
+            const json = await response.json();
+            console.log(json);
 
-			// updating state
-			setResults(json);
+            // updating state
+            setResults(json);
 
-			// handling errors
-		} catch (err) {
-			console.log(err);
-		}
-	};
+            // handling errors
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
-	const handleSubmit = (e) => {
-		console.log('submitted');
-		e.preventDefault();
-		getAPI();
-	};
+    const handleSave = (pngcat) => {
 
-	return (
-		<DataContext.Provider
-			value={{
-				searchResults,
-				handleSubmit,
-			}}
-		>
-			<Router>
-				<Navbar />
-				<Switch>
-					<Route exact path="/" render={() => <Search />} />
-					<Route exact path="/About" render={() => <About />} />
-					<Route exact path="/Box" render={() => <Box />} />
-					<Route exact path="/imageDrag" render={() => <ImageUploader />} />
-				</Switch>
-			</Router>
-		</DataContext.Provider>
-	);
+    }
+
+    const handleSubmit = (e) => {
+        console.log('submitted');
+        e.preventDefault();
+        getAPI();
+    };
+
+    return (
+        <DataContext.Provider
+            value={{
+                searchResults,
+                handleSubmit,
+            }}
+        >
+            <Router>
+                <Navbar />
+                <Switch>
+                    <Route exact path="/" render={() => <Search />} />
+                    <Route exact path="/About" render={() => <About />} />
+                    <Route exact path="/Box" render={() => <Box handleSave={handleSave} />} />
+                    <Route exact path="/imageDrag" render={() => <ImageUploader />} />
+                </Switch>
+            </Router>
+        </DataContext.Provider>
+    );
 }
