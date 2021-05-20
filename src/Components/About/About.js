@@ -8,23 +8,21 @@ export default function About() {
 		<div className={aboutStyle.aboutContainer}>
 			<h2 className={aboutStyle.name}>Shamseen</h2>
 			<div className={aboutStyle.profileContainer}>
-				<div className={aboutStyle.imgAndDesContainer}>
-					<img
-						src={placeholder}
-						alt="shamseen"
-						className={aboutStyle.headShot}
-						width="200"
-					/>
-					<p className={aboutStyle.p}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat. Duis aute irure dolor in
-						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-						culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</div>
+				<img
+					src={placeholder}
+					alt="shamseen"
+					className={aboutStyle.headShot}
+					width="200"
+				/>
+				<p className={aboutStyle.p}>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+					minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat. Duis aute irure dolor in
+					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+					culpa qui officia deserunt mollit anim id est laborum.
+				</p>
 				<ul className={aboutStyle.ul}>
 					Contact:
 					<li>GitHub</li>
@@ -34,23 +32,21 @@ export default function About() {
 			</div>
 			<h2 className={aboutStyle.name}>Hengyu</h2>
 			<div className={aboutStyle.profileContainer}>
-				<div className={aboutStyle.imgAndDesContainer}>
-					<img
-						src={placeholder}
-						alt="hengyu"
-						className={aboutStyle.headShot}
-						width="200"
-					/>
-					<p className={aboutStyle.p}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer
-						quis auctor elit sed vulputate mi. Nunc faucibus a pellentesque sit
-						amet porttitor. Metus vulputate eu scelerisque felis imperdiet.
-						Iaculis at erat pellentesque adipiscing commodo elit. Et pharetra
-						pharetra massa massa. Eu lobortis elementum nibh tellus molestie
-						nunc non blandit.
-					</p>
-				</div>
+				<img
+					src={placeholder}
+					alt="hengyu"
+					className={aboutStyle.headShot}
+					width="200"
+				/>
+				<p className={aboutStyle.p}>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+					eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer
+					quis auctor elit sed vulputate mi. Nunc faucibus a pellentesque sit
+					amet porttitor. Metus vulputate eu scelerisque felis imperdiet.
+					Iaculis at erat pellentesque adipiscing commodo elit. Et pharetra
+					pharetra massa massa. Eu lobortis elementum nibh tellus molestie nunc
+					non blandit.
+				</p>
 				<ul className={aboutStyle.ul}>
 					Contact:
 					<li>GitHub</li>

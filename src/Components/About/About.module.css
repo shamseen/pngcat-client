@@ -10,22 +10,18 @@
 .profileContainer {
 	border: 1px solid #dbedf3;
 	color: #dbedf3;
+
 	margin: 30px;
 	padding: 20px;
 	border-radius: 5px;
+
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-}
-
-.imgAndDesContainer {
-	border: 1px solid #dbedf3;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	align-items: center;
 }
 
 .ul {
+	width: 100%;
 	padding: 10px;
 	/* margin: 2px; */
 	border: 1px solid #dbedf3;
