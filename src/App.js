@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Search from './Components/Search/Search'
 import Navbar from './Components/Navbar/Navbar'
 import About from './Components/About/About'
+import { searchSequences } from './DataServices/pnGCATDataService';
 
 export const DataContext = React.createContext()
 
@@ -25,17 +26,25 @@ export default function App() {
         }
     };
 
-    const handleSubmit = (e) => {
+    const searchAPI = async (params) => {
         console.log('submitted');
-        e.preventDefault();
-        getAPI();
+
+        // console.log(JSON.stringify(params));
+        try {
+            const json = await searchSequences(...params);
+
+            // updating state
+            setResults(json);
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     return (
 
         <DataContext.Provider value={{
             searchResults,
-            handleSubmit
+            searchAPI,
         }}>
             <Router>
                 <Navbar />

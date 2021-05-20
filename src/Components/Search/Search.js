@@ -1,19 +1,26 @@
 import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../App';
 import SearchResults from '../SearchResults/SearchResults'
+import SearchTextInput from './SearchTextInput';
 import * as searchStyle from './Search.module.css'
 
 
 
 export default function Search() {
-  const { handleSubmit, searchResults } = useContext(DataContext);
+  const { searchAPI, searchResults } = useContext(DataContext);
+  const [sequence, setSeq] = useState('');
+  const [study, setStudy] = useState('');
+  const [keyword, setKeyword] = useState('');
 
   useEffect(async () => {
-    console.log(searchResults)
   }, []);
 
-  const handleChange = (e) => {
-    /* setSearch */
+  const handleSubmit = (e) => {
+    // preventing page reset
+    e.preventDefault();
+
+    // API call
+    searchAPI([sequence, study, keyword]);
   }
 
   return (
@@ -23,33 +30,18 @@ export default function Search() {
       {/* ------- Search form --------- */}
       <form onSubmit={handleSubmit} >
 
-        Author:{" "}
-        <input
-          className={searchStyle.input}
-          type="text"
-          id="author"
-          placeholder="Author"
-          onChange={handleChange}
-        />
+        Sequence Id:{" "}
+        <SearchTextInput state={sequence} updateState={setSeq} placeholder='CP034527' />
         <br />
-          Article DOI:{" "}
-        <input
-          className={searchStyle.input}
-          type="text"
-          id="articleDOI"
-          placeholder="DOI link"
-          onChange={handleChange}
-        />
+
+        Publication Id:{" "}
+        <SearchTextInput state={study} updateState={setStudy} placeholder='PRJNA504496' />
         <br />
-          Keyword:{" "}
-        <input
-          className={searchStyle.input}
-          type="text"
-          id="keyword"
-          placeholder="keywords"
-          onChange={handleChange}
-        />
+
+        Keyword:{" "}
+        <SearchTextInput state={keyword} updateState={setKeyword} placeholder='somatostatin' />
         <br />
+
         <input type="submit" value="Search" className={searchStyle.searchBtn} />
       </form>
 
