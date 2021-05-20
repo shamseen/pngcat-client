@@ -1,6 +1,6 @@
-const baseUrl = 'https://pngcat-api.herokuapp.com/';
+const baseUrl = 'https://pngcat-api.herokuapp.com';
 
-// const baseUrl = 'http://localhost:8000/';
+// const baseUrl = 'http://localhost:8000';
 
 export const savePngcat = async (pngcat) => {
     const url = `${baseUrl}/pngcat/`;
