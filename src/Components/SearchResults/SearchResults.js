@@ -1,24 +1,17 @@
-import Search from "../Search/Search"
-
-const SearchResults = ({ result }) => {
+export default function SearchResults({ result }) {
 
   return (
     <div id="result">
       <hr />
-      {
-        Object.keys(result).map((prop, i) => {
-          return (
-            <div key={i}>
-              <h4>{prop}:</h4>
-              <span>{JSON.stringify(result[prop])}</span>
-              <br />
-              <br />
-            </div>
-          )
-        })
-      }
+      <h4>{result.description}</h4>
+      <span>View on the European Nucleotide Archive:&nbsp;
+        <a href={`https://www.ebi.ac.uk/ena/browser/view/${result.accession}`}>{result.accession}
+        </a></span>
+      <h5>
+        Publication ID:&nbsp;
+        <a href={`https://www.ebi.ac.uk/ena/browser/view/${result.study_accession}`}>{result.study_accession}
+        </a>
+      </h5>
     </div>
   )
 }
-
-export default SearchResults;
