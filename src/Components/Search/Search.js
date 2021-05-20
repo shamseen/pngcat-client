@@ -1,18 +1,27 @@
-import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../App";
-import SearchResults from "../SearchResults/SearchResults";
-import * as searchStyle from "./Search.module.css";
+import { useContext, useEffect, useState } from 'react';
+import { DataContext } from '../../App';
+import SearchResults from '../SearchResults/SearchResults'
+import SearchTextInput from './SearchTextInput';
+import * as searchStyle from './Search.module.css'
+
+
 
 export default function Search() {
-	const { handleSubmit, searchResults } = useContext(DataContext);
+  const { searchAPI, searchResults } = useContext(DataContext);
+  const [sequence, setSeq] = useState('');
+  const [study, setStudy] = useState('');
+  const [keyword, setKeyword] = useState('');
 
-	useEffect(async () => {
-		console.log(searchResults);
-	}, []);
+  useEffect(async () => {
+  }, []);
 
-	const handleChange = (e) => {
-		/* setSearch */
-	};
+  const handleSubmit = (e) => {
+    // preventing page reset
+    e.preventDefault();
+
+    // API call
+    searchAPI([sequence, study, keyword]);
+  }
 
 	return (
 		<div className={searchStyle.searchContainer}>
@@ -52,13 +61,30 @@ export default function Search() {
 				<input type="submit" value="Search" className={searchStyle.searchBtn} />
 			</form>
 
-			{/* ------- Results --------- */}
-			<div>
-				<h1>Results</h1>
-				{searchResults.map((res, i) => {
-					return <SearchResults result={res} key={i} />;
-				})}
-			</div>
-		</div>
-	);
+        Sequence Id:{" "}
+        <SearchTextInput state={sequence} updateState={setSeq} placeholder='CP034527' />
+        <br />
+
+        Publication Id:{" "}
+        <SearchTextInput state={study} updateState={setStudy} placeholder='PRJNA504496' />
+        <br />
+
+        Keyword:{" "}
+        <SearchTextInput state={keyword} updateState={setKeyword} placeholder='somatostatin' />
+        <br />
+
+        <input type="submit" value="Search" className={searchStyle.searchBtn} />
+      </form>
+
+      {/* ------- Results --------- */}
+      <div>
+        <h1>Results</h1>
+        {
+          searchResults.map((res, i) => {
+            return <SearchResults result={res} key={i} />
+          })
+        }
+      </div>
+    </div>
+  )
 }

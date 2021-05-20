@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar/Navbar';
 import About from './Components/About/About';
 import Box from './Components/DragBox/DragBox';
 import ImageUploader from './Components/ImageUploader/ImageUploader';
+import { searchSequences } from './DataServices/pnGCATDataService';
 
 export const DataContext = React.createContext();
 
@@ -25,24 +26,32 @@ export default function App() {
             console.log(err);
         }
     };
-
+  
     const handleSave = (pngcat) => {
 
     }
 
-    const handleSubmit = (e) => {
+
+    const searchAPI = async (params) => {
         console.log('submitted');
-        e.preventDefault();
-        getAPI();
-    };
+
+        // console.log(JSON.stringify(params));
+        try {
+            const json = await searchSequences(...params);
+
+            // updating state
+            setResults(json);
+        } catch (e) {
+            console.log(e);
+        }
+    }
 
     return (
-        <DataContext.Provider
-            value={{
-                searchResults,
-                handleSubmit,
-            }}
-        >
+
+        <DataContext.Provider value={{
+            searchResults,
+            searchAPI,
+        }}>
             <Router>
                 <Navbar />
                 <Switch>
