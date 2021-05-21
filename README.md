@@ -27,5 +27,6 @@ Select a DNA sequence from the European Nucleotide Archive and string together s
 
 ## Contributors
 
-Shamseen (https://github.com/shamseen)
-Hengyu (https://github.com/hengyuni)
+[Shamseen](https://github.com/shamseen)
+
+[Hengyu](https://github.com/hengyuni)
