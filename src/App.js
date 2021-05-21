@@ -63,7 +63,6 @@ export default function App() {
                     <Route exact path="/" render={() => <Search />} />
                     <Route exact path="/About" render={() => <About />} />
                     <Route exact path="/Box" render={() => <Box handleSave={handleSave} />} />
-                    <Route exact path="/imageDrag" render={() => <ImageUploader />} />
                     <Route exact path="/Browse" render={() => <BrowsePngcats getAllPngcats={getAllPngcats} />} />
                 </Switch>
             </Router>

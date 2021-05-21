@@ -24,14 +24,14 @@ const Navbar = () => {
 					<Link className={navStyle.navItem} to="/" exact>
 						Home
 					</Link>
+					<Link className={navStyle.navItem} to="/Browse">
+						Browse
+					</Link>
 					<Link className={navStyle.navItem} to="/Box">
 						Drag-n-Drop
 					</Link>
 					<Link className={navStyle.navItem} to="/About">
 						About
-					</Link>
-					<Link className={navStyle.navItem} to="/Browse">
-						Browse
 					</Link>
 				</div>
 				<div className={navStyle.activeSeq}>
