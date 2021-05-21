@@ -9,7 +9,7 @@ export default function DragBox({ handleSave }) {
 		const glyphsToSave = [];
 
 		// grabbing all images dragged to the second board
-		const cardElements = document.getElementById("pngcat-board").childNodes;
+		const cardElements = document.getElementById("pngcatBoard").childNodes;
 
 		// storing the glyph names as strings
 		// TO DO: let user label the gene
