@@ -56,3 +56,24 @@
 		font-size: small;
 	}
 }
+
+.activeSeq {
+  border: #dbedf3 solid 1px;
+  border-radius: 2px;
+
+  padding: 10px 5px;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  color: #dbedf3;
+  align-self: center;
+}
+
+.activeSeq a {
+  color: #dbedf3;
+  padding: 5px;
+}
+
+.activeSeq a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;

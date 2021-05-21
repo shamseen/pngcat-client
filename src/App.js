@@ -11,22 +11,22 @@ export const DataContext = React.createContext();
 
 export default function App() {
     const [searchResults, setResults] = useState([]);
+    const [activeSeq, setActiveSeq] = useState({});
 
     const handleSave = (glyphs) => {
         console.log('save clicked');
-        const pngcat = {
-            "Seq_Accession": "someseq",
-            "Study_Accession": "somestudy",
-            "SBOL_Glyphs": glyphs
-        }
 
-        // console.log(JSON.stringify(pngcat));
+        // updating state
+        const pngcat = activeSeq;
+        pngcat["SBOL_Glyphs"] = glyphs;
+        setActiveSeq(pngcat);
 
-        savePngcat(pngcat);
+        // updating API
+        savePngcat(activeSeq);
     }
 
 
-    const searchAPI = async (params) => {
+    const handleSearch = async (params) => {
         console.log('submitted');
 
         try {
@@ -34,16 +34,28 @@ export default function App() {
 
             // updating state
             setResults(json);
+
+            // catching any errors
         } catch (e) {
             console.log(e);
         }
     }
 
+    const handleSelectedResult = (result) => {
+        setActiveSeq(result);
+        console.log('new seq');
+        console.log(result);
+        console.log(activeSeq);
+    }
+
+
     return (
 
         <DataContext.Provider value={{
+            activeSeq,
+            handleSelectedResult,
             searchResults,
-            searchAPI,
+            handleSearch
         }}>
             <Router>
                 <Navbar />

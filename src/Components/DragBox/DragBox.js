@@ -22,15 +22,19 @@ export default function DragBox({ handleSave }) {
 		});
 
 		handleSave(glyphsToSave);
+		alert("Your .pnGCAT has been saved!");
 	}
 
 	return (
 		<div className={DragBoxStyle.DragBox}>
-			<h3 className={DragBoxStyle.header}>Drag and Drop</h3>
+			<h3 className={DragBoxStyle.header}>Build your .pnGCAT here</h3>
 			<main className={DragBoxStyle.flexbox}>
 				<button type='button' id="save-pngcat" onClick={savePngcat}>Save!</button>
 
-				<Board id="glyph-bank" className={DragBoxStyle.board}>
+				<Board id="pngcatBoard" className={DragBoxStyle.board}>
+				</Board>
+
+				<Board id="glyphBank" className={`${DragBoxStyle.board} ${DragBoxStyle.glyphBank}`} style={{ overflowY: 'scroll' }}>
 					{
 						glyphNames.map((glyph, i) => {
 							return (
@@ -45,9 +49,6 @@ export default function DragBox({ handleSave }) {
 							)
 						})
 					}
-				</Board>
-
-				<Board id="pngcat-board" className={DragBoxStyle.board}>
 				</Board>
 			</main>
 		</div>
