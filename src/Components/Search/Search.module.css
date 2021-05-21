@@ -14,6 +14,7 @@
 	border-radius: 5px;
 	box-shadow: 5px 5px 15px rgb(49, 49, 49);
 	width: 40vw;
+	max-width: 350px;
 	height: 60vh;
 	max-height: 600px;
 	/* align-items: center; */
@@ -84,6 +85,7 @@
 	border-radius: 5px;
 	box-shadow: 5px 5px 15px rgb(49, 49, 49);
 	width: 40vw;
+	max-width: 350px;
 	height: 60vh;
 	/* max-height: 90vh; */
 	overflow-y: scroll;

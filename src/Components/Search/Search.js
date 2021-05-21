@@ -5,11 +5,11 @@ import SearchTextInput from "./SearchTextInput";
 import * as searchStyle from "./Search.module.css";
 
 export default function Search() {
-
-	const { handleSearch, searchResults, handleSelectedResult } = useContext(DataContext);
-	const [sequence, setSeq] = useState('');
-	const [study, setStudy] = useState('');
-	const [keyword, setKeyword] = useState('');
+	const { handleSearch, searchResults, handleSelectedResult } =
+		useContext(DataContext);
+	const [sequence, setSeq] = useState("");
+	const [study, setStudy] = useState("");
+	const [keyword, setKeyword] = useState("");
 
 	useEffect(async () => {}, []);
 
@@ -19,8 +19,7 @@ export default function Search() {
 
 		// API call
 		handleSearch([sequence, study, keyword]);
-	}
-
+	};
 
 	return (
 		<div className={searchStyle.searchFlex}>
@@ -63,16 +62,16 @@ export default function Search() {
 			</div>
 			{/* ------- Results --------- */}
 			<div className={searchStyle.resultContainer}>
-				<h1>Results</h1>
-				{
-					searchResults.map((res, i) => {
-						return <SearchResults
+				<h2 className={searchStyle.header}>Results</h2>
+				{searchResults.map((res, i) => {
+					return (
+						<SearchResults
 							handleSelect={handleSelectedResult}
 							result={res}
-							key={i} />
-					})
-				}
-
+							key={i}
+						/>
+					);
+				})}
 			</div>
 		</div>
 	);
