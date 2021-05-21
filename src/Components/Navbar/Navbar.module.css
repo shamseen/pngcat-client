@@ -41,3 +41,18 @@
 	margin-left: 10px;
 	color: #dbedf3;
 }
+
+@media only screen and (max-width: 600px) {
+	.logoContainer {
+		display: none;
+	}
+
+	.navbarNav {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.navItem {
+		font-size: small;
+	}
+}

@@ -2,6 +2,12 @@
 	list-style-type: none;
 }
 
+.aboutContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .name {
 	color: #dbedf3;
 	text-align: center;
@@ -16,6 +22,7 @@
 	padding: 30px;
 	padding-bottom: 10px;
 	border-radius: 5px;
+	max-width: 768px;
 
 	display: flex;
 	flex-direction: column;
@@ -24,7 +31,7 @@
 }
 
 .headShot {
-	border: 5px solid #283149;
+	border: 5px solid #dbedf3;
 	border-radius: 5px;
 }
 
@@ -49,8 +56,18 @@
 	background-color: #283149;
 }
 
-.line {
+.a {
+	color: #dbedf3;
+	text-decoration: none;
+}
+
+.a:hover {
+	color: #b0e6f8;
+}
+
+/* .line {
 	height: 1px;
 	margin: 40px;
 	background-color: solid #283149;
-}
+	max-width: 768px;
+} */

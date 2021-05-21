@@ -15,7 +15,7 @@ export default function Search() {
 	};
 
 	return (
-		<div>
+		<div className={searchStyle.searchFlex}>
 			<div className={searchStyle.searchContainer}>
 				<h2 className={searchStyle.header}>Search</h2>
 				{/* ------- Search form --------- */}

@@ -1,18 +1,19 @@
 import * as aboutStyle from "./About.module.css";
 
 export default function About() {
-	let placeholder =
-		"https://i.pinimg.com/originals/01/82/c2/0182c29f40e25a65808850494b57ba45.jpg";
+	let shamseen =
+		"https://scontent-bos3-1.xx.fbcdn.net/v/t1.18169-9/269353_4191479743508_760148023_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=de6eea&_nc_ohc=bfxFflmpDPwAX_i_NDg&_nc_ht=scontent-bos3-1.xx&oh=e96c990fa4504d3b7c5eb35f0d23b08e&oe=60CC28D1";
 
+	let hengyu = "https://i.imgur.com/T4kI92O.jpg";
 	return (
 		<div className={aboutStyle.aboutContainer}>
 			<div className={aboutStyle.profileContainer}>
 				<h2 className={aboutStyle.name}>Shamseen</h2>
 				<img
-					src={placeholder}
+					src={shamseen}
 					alt="shamseen"
 					className={aboutStyle.headShot}
-					width="200"
+					width="300"
 				/>
 				<p className={aboutStyle.p}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -25,19 +26,29 @@ export default function About() {
 				</p>
 				<ul className={aboutStyle.ul}>
 					<h3 className={aboutStyle.h3}>Contact:</h3>
-					<li>GitHub</li>
-					<li>LinkedIn</li>
-					<li>Twitter</li>
+					<li>
+						<a className={aboutStyle.a} href="https://www.github.com/shamseen">
+							GitHub
+						</a>
+					</li>
+					<li>
+						<a
+							className={aboutStyle.a}
+							href="https://www.linkedin.com/shamseenr"
+						>
+							LinkedIn
+						</a>
+					</li>
 				</ul>
 			</div>
-			<hr className={aboutStyle.line} />
+			{/* <hr className={aboutStyle.line} /> */}
 			<div className={aboutStyle.profileContainer}>
 				<h2 className={aboutStyle.name}>Hengyu</h2>
 				<img
-					src={placeholder}
+					src={hengyu}
 					alt="hengyu"
 					className={aboutStyle.headShot}
-					width="200"
+					width="400"
 				/>
 				<p className={aboutStyle.p}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -50,9 +61,19 @@ export default function About() {
 				</p>
 				<ul className={aboutStyle.ul}>
 					<h3 className={aboutStyle.h3}>Contact:</h3>
-					<li>GitHub</li>
-					<li>LinkedIn</li>
-					<li>Twitter</li>
+					<li>
+						<a className={aboutStyle.a} href="https://www.github.com/hengyuni">
+							GitHub
+						</a>
+					</li>
+					<li>
+						<a
+							className={aboutStyle.a}
+							href="https://www.linkedin.com/hengyuni"
+						>
+							LinkedIn
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
