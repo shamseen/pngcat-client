@@ -1,29 +1,60 @@
 .navbarHeader {
-  /* font-family: 'Courier New', Courier, monospace; */
-  font-weight: bolder;
-  background-color: #283149;
-  height: 50px;
+	/* font-family: 'Courier New', Courier, monospace; */
+	font-weight: bolder;
+	background-color: #283149;
+	height: 100%;
 }
 
 .navbarNav {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	box-shadow: 5px 5px 15px rgb(49, 49, 49);
+}
+
+.navItemsContainer {
+	display: flex;
+	justify-content: flex-end;
 }
 
 .navItem {
-  color: #dbedf3;
-  margin: 15px 15px;
-  padding: 2px 5px;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
+	color: #dbedf3;
+	margin: 15px 10px;
+	margin-right: 10px;
+	padding: 2px 5px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
 }
 
 .navItem:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 2px;
+}
+
+.logoContainer {
+	margin-right: 5px;
+}
+
+.logo {
+	margin-left: 10px;
+	color: #dbedf3;
+}
+
+@media only screen and (max-width: 600px) {
+	.logoContainer {
+		display: none;
+	}
+
+	.navbarNav {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.navItem {
+		font-size: small;
+	}
 }
 
 .activeSeq {
@@ -46,4 +77,3 @@
 .activeSeq a:hover {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 2px;
-}
