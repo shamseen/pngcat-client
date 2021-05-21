@@ -5,7 +5,7 @@ import Navbar from './Components/Navbar/Navbar';
 import About from './Components/About/About';
 import Box from './Components/DragBox/DragBox';
 import BrowsePngcats from './Components/Browse/Browse';
-import { getAllPngcats, savePngcat, searchSequences } from './DataServices/pnGCATDataService';
+import { deletePngcat, getAllPngcats, savePngcat, searchSequences } from './DataServices/pnGCATDataService';
 
 export const DataContext = React.createContext();
 
@@ -55,6 +55,7 @@ export default function App() {
             handleSelectedResult,
             searchResults,
             handleSearch,
+            deletePngcat
         }}>
             <Router>
                 <Navbar />

@@ -1,6 +1,20 @@
 const baseUrl = 'https://pngcat-api.herokuapp.com';
 
-// const baseUrl = 'http://localhost:8000';
+export const deletePngcat = async (id) => {
+    const url = `${baseUrl}/pngcat/${id}`;
+
+    try {
+        const response = await fetch(url, {
+            method: "DELETE"
+        });
+
+        const json = await response.json();
+        console.log(json);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const getAllPngcats = async () => {
     const url = `${baseUrl}/pngcat/all`;
 
