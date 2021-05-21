@@ -6,6 +6,8 @@ import { DataContext } from '../../App';
 const Navbar = () => {
 	const { activeSeq } = useContext(DataContext);
 	const baseUrl = 'https://www.ebi.ac.uk/ena/browser/view';
+
+	console.log(!activeSeq.Seq_Accession);
 	return (
 		<header className={navStyle.navbarHeader}>
 			<nav className={navStyle.navbarNav}>
@@ -27,9 +29,14 @@ const Navbar = () => {
 					<Link className={navStyle.navItem} to="/Browse">
 						Browse
 					</Link>
-					<Link className={navStyle.navItem} to="/Box">
-						Drag-n-Drop
-					</Link>
+
+					{/* user can't enter drag and drop until selecting seqence */}
+					{!activeSeq.Study_Accession ? null
+						: <Link className={navStyle.navItem} to="/Box">
+							Drag-n-Drop
+							</Link>
+					}
+
 					<Link className={navStyle.navItem} to="/About">
 						About
 					</Link>

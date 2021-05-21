@@ -5,7 +5,12 @@ import Navbar from './Components/Navbar/Navbar';
 import About from './Components/About/About';
 import Box from './Components/DragBox/DragBox';
 import BrowsePngcats from './Components/Browse/Browse';
-import { deletePngcat, getAllPngcats, savePngcat, searchSequences } from './DataServices/pnGCATDataService';
+import {
+    deletePngcat,
+    getAllPngcats,
+    savePngcat,
+    searchSequences
+} from './DataServices/pnGCATDataService';
 
 export const DataContext = React.createContext();
 
@@ -62,7 +67,7 @@ export default function App() {
                 <Switch>
                     <Route exact path="/" render={() => <Search />} />
                     <Route exact path="/About" render={() => <About />} />
-                    <Route exact path="/Box" render={() => <Box handleSave={handleSave} />} />
+                    <Route exact path="/Box" render={() => <Box pngcat={activeSeq} handleSave={handleSave} />} />
                     <Route exact path="/Browse" render={() => <BrowsePngcats getAllPngcats={getAllPngcats} />} />
                 </Switch>
             </Router>
