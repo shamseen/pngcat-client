@@ -15,12 +15,14 @@ export default function App() {
 
     const handleSave = (glyphs) => {
         console.log('save clicked');
-        const pngcat = {
-            "Seq_Accession": "someseq",
-            "Study_Accession": "somestudy",
-            "SBOL_Glyphs": glyphs
-        }
-        savePngcat(pngcat);
+
+        // updating state
+        const pngcat = activeSeq;
+        pngcat["SBOL_Glyphs"] = glyphs;
+        setActiveSeq(pngcat);
+
+        // updating API
+        savePngcat(activeSeq);
     }
 
 
