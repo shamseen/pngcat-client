@@ -2,7 +2,7 @@
 	/* font-family: 'Courier New', Courier, monospace; */
 	font-weight: bolder;
 	background-color: #283149;
-	height: 50px;
+	height: 100%;
 }
 
 .navbarNav {
@@ -10,12 +10,18 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	align-items: center;
+	box-shadow: 5px 5px 15px rgb(49, 49, 49);
+}
+
+.navItemsContainer {
+	display: flex;
+	justify-content: flex-end;
 }
 
 .navItem {
 	color: #dbedf3;
 	margin: 15px 10px;
-	margin-right: 20px;
+	margin-right: 10px;
 	padding: 2px 5px;
 	text-align: center;
 	text-transform: uppercase;
@@ -27,11 +33,11 @@
 	border-radius: 2px;
 }
 
-.logContainer {
+.logoContainer {
 	margin-right: 5px;
 }
 
 .logo {
-	margin-left: 12px;
-	margin-top: 3px;
+	margin-left: 10px;
+	color: #dbedf3;
 }

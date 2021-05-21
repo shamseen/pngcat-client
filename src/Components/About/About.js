@@ -6,8 +6,8 @@ export default function About() {
 
 	return (
 		<div className={aboutStyle.aboutContainer}>
-			<h2 className={aboutStyle.name}>Shamseen</h2>
 			<div className={aboutStyle.profileContainer}>
+				<h2 className={aboutStyle.name}>Shamseen</h2>
 				<img
 					src={placeholder}
 					alt="shamseen"
@@ -24,14 +24,15 @@ export default function About() {
 					culpa qui officia deserunt mollit anim id est laborum.
 				</p>
 				<ul className={aboutStyle.ul}>
-					Contact:
+					<h3 className={aboutStyle.h3}>Contact:</h3>
 					<li>GitHub</li>
 					<li>LinkedIn</li>
 					<li>Twitter</li>
 				</ul>
 			</div>
-			<h2 className={aboutStyle.name}>Hengyu</h2>
+			<hr className={aboutStyle.line} />
 			<div className={aboutStyle.profileContainer}>
+				<h2 className={aboutStyle.name}>Hengyu</h2>
 				<img
 					src={placeholder}
 					alt="hengyu"
@@ -48,7 +49,7 @@ export default function About() {
 					non blandit.
 				</p>
 				<ul className={aboutStyle.ul}>
-					Contact:
+					<h3 className={aboutStyle.h3}>Contact:</h3>
 					<li>GitHub</li>
 					<li>LinkedIn</li>
 					<li>Twitter</li>

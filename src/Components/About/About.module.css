@@ -10,25 +10,47 @@
 .profileContainer {
 	border: 1px solid #dbedf3;
 	color: #dbedf3;
+	background-color: #283149a1;
 
 	margin: 30px;
-	padding: 20px;
+	padding: 30px;
+	padding-bottom: 10px;
 	border-radius: 5px;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	box-shadow: 5px 5px 15px rgb(49, 49, 49);
 }
 
-.ul {
-	width: 100%;
-	padding: 10px;
-	/* margin: 2px; */
-	border: 1px solid #dbedf3;
+.headShot {
+	border: 5px solid #283149;
+	border-radius: 5px;
+}
+
+.h3 {
+	margin: 10px;
+	margin-top: 0px;
 }
 
 .p {
-	margin: 20px;
-	border: 1px solid #dbedf3;
+	background-color: #283149;
+
+	text-align: center;
 	padding: 20px;
+	margin-bottom: 0;
+}
+
+.ul {
+	text-align: center;
+	margin: 20px;
+	width: 100%;
+	padding: 20px;
+	background-color: #283149;
+}
+
+.line {
+	height: 1px;
+	margin: 40px;
+	background-color: solid #283149;
 }

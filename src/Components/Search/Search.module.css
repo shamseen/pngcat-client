@@ -4,6 +4,7 @@
 	border: 1px solid #dbedf3;
 	padding: 20px;
 	border-radius: 5px;
+	box-shadow: 5px 5px 15px rgb(49, 49, 49);
 }
 .header {
 	text-align: center;
@@ -68,4 +69,5 @@
 	border: 1px solid #dbedf3;
 	padding: 20px;
 	border-radius: 5px;
+	box-shadow: 5px 5px 15px rgb(49, 49, 49);
 }

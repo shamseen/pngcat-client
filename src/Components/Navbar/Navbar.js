@@ -6,6 +6,10 @@ const Navbar = () => {
 		<header className={navStyle.navbarHeader}>
 			<nav className={navStyle.navbarNav}>
 				<div className={navStyle.logoContainer}>
+					{/* <Link className={navStyle.logo} to="/" exact>
+						.pnGCAT
+					</Link> */}
+					{/* <h2 className={navStyle.logo}>.pnGCAT</h2> */}
 					<img
 						src="https://d1w8c6s6gmwlek.cloudfront.net/oldshirtybastard.com/overlays/343/384/34338491.png"
 						className={navStyle.logo}
