@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../App";
-import SearchResults from "../SearchResults/SearchResults";
+import SearchResults from "./SearchResults";
 import SearchTextInput from "./SearchTextInput";
 import * as searchStyle from "./Search.module.css";
 
@@ -11,7 +11,7 @@ export default function Search() {
 	const [study, setStudy] = useState('');
 	const [keyword, setKeyword] = useState('');
 
-	useEffect(async () => {}, []);
+	useEffect(async () => { }, []);
 
 	const handleSubmit = (e) => {
 		// preventing page reset

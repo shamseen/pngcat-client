@@ -1,3 +1,5 @@
+import * as searchStyle from "./Search.module.css";
+
 export default function SearchResults({ result, handleSelect }) {
 
   const baseUrl = 'https://www.ebi.ac.uk/ena/browser/view';
@@ -16,9 +18,10 @@ export default function SearchResults({ result, handleSelect }) {
           })
         }}
         type='button'
-        id="new-pngcat">
+        id="new-pngcat"
+        className={searchStyle.searchBtn}>
         Select
-        </button>
+      </button>
 
       <h4>{result.description}</h4>
       <span>
