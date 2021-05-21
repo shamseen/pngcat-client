@@ -7,54 +7,53 @@ import * as searchStyle from './Search.module.css'
 
 
 export default function Search() {
-  const { searchAPI, searchResults } = useContext(DataContext);
-  const [sequence, setSeq] = useState('');
-  const [study, setStudy] = useState('');
-  const [keyword, setKeyword] = useState('');
+	const { searchAPI, searchResults } = useContext(DataContext);
+	const [sequence, setSeq] = useState('');
+	const [study, setStudy] = useState('');
+	const [keyword, setKeyword] = useState('');
 
-  useEffect(async () => {
-  }, []);
+	useEffect(async () => {
+	}, []);
 
-  const handleSubmit = (e) => {
-    // preventing page reset
-    e.preventDefault();
+	const handleSubmit = (e) => {
+		// preventing page reset
+		e.preventDefault();
 
-    // API call
-    searchAPI([sequence, study, keyword]);
-  }
+		// API call
+		searchAPI([sequence, study, keyword]);
+	}
 
-  return (
-    <div className={searchStyle.searchContainer}>
-      <h2 className={searchStyle.header}>Search</h2>
+	return (
+		<div className={searchStyle.searchContainer}>
+			<h2 className={searchStyle.header}>Search</h2>
 
-      {/* ------- Search form --------- */}
-      <form onSubmit={handleSubmit} >
+			{/* ------- Search form --------- */}
+			<form onSubmit={handleSubmit}>
 
-        Sequence Id:{" "}
-        <SearchTextInput state={sequence} updateState={setSeq} placeholder='CP034527' />
-        <br />
+				Sequence Id:{" "}
+				<SearchTextInput state={sequence} updateState={setSeq} placeholder='CP034527' />
+				<br />
 
         Publication Id:{" "}
-        <SearchTextInput state={study} updateState={setStudy} placeholder='PRJNA504496' />
-        <br />
+				<SearchTextInput state={study} updateState={setStudy} placeholder='PRJNA504496' />
+				<br />
 
         Keyword:{" "}
-        <SearchTextInput state={keyword} updateState={setKeyword} placeholder='somatostatin' />
-        <br />
+				<SearchTextInput state={keyword} updateState={setKeyword} placeholder='somatostatin' />
+				<br />
 
-        <input type="submit" value="Search" className={searchStyle.searchBtn} />
-      </form>
+				<input type="submit" value="Search" className={searchStyle.searchBtn} />
+			</form>
 
-      {/* ------- Results --------- */}
-      <div>
-        <h1>Results</h1>
-        {
-          searchResults.map((res, i) => {
-            return <SearchResults result={res} key={i} />
-          })
-        }
-      </div>
-    </div>
-  )
+			{/* ------- Results --------- */}
+			<div>
+				<h1>Results</h1>
+				{
+					searchResults.map((res, i) => {
+						return <SearchResults result={res} key={i} />
+					})
+				}
+			</div>
+		</div>
+	)
 }
-
