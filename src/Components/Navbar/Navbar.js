@@ -4,8 +4,10 @@ import { useContext } from 'react';
 import { DataContext } from '../../App';
 
 const Navbar = () => {
-  const { activeSeq } = useContext(DataContext);
-    const baseUrl = 'https://www.ebi.ac.uk/ena/browser/view';
+	const { activeSeq } = useContext(DataContext);
+	const baseUrl = 'https://www.ebi.ac.uk/ena/browser/view';
+
+	console.log(!activeSeq.Seq_Accession);
 	return (
 		<header className={navStyle.navbarHeader}>
 			<nav className={navStyle.navbarNav}>
@@ -24,26 +26,34 @@ const Navbar = () => {
 					<Link className={navStyle.navItem} to="/" exact>
 						Home
 					</Link>
-					<Link className={navStyle.navItem} to="/Box">
-						Drag-n-Drop
+					<Link className={navStyle.navItem} to="/Browse">
+						Browse
 					</Link>
+
+					{/* user can't enter drag and drop until selecting seqence */}
+					{!activeSeq.Study_Accession ? null
+						: <Link className={navStyle.navItem} to="/Box">
+							Drag-n-Drop
+							</Link>
+					}
+
 					<Link className={navStyle.navItem} to="/About">
 						About
 					</Link>
 				</div>
- <div className={navStyle.activeSeq}>
-                    <span id='seq-id'>Sequence:&nbsp;
-                        <a href={`${baseUrl}/${activeSeq.Seq_Accession}`}>
-                            {activeSeq.Seq_Accession}
-                        </a>
-                    </span>
+				<div className={navStyle.activeSeq}>
+					<span id='seq-id'>Sequence:&nbsp;
+						<a href={`${baseUrl}/${activeSeq.Seq_Accession}`}>
+							{activeSeq.Seq_Accession}
+						</a>
+					</span>
 
-                    <span id='study-id'>Study:&nbsp;
-                        <a href={`${baseUrl}/${activeSeq.Study_Accession}`}>
-                            {activeSeq.Study_Accession}
-                        </a>
-                    </span>
-                </div>
+					<span id='study-id'>Study:&nbsp;
+						<a href={`${baseUrl}/${activeSeq.Study_Accession}`}>
+							{activeSeq.Study_Accession}
+						</a>
+					</span>
+				</div>
 			</nav>
 		</header>
 	);
