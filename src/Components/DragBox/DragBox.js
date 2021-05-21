@@ -4,7 +4,7 @@ import Card from "./Card";
 import { glyphs as glyphNames } from "./Glyphs";
 import * as DragBoxStyle from "./DragBox.module.css";
 
-export default function DragBox({ handleSave }) {
+export default function DragBox({ handleSave, pngcat }) {
 	const savePngcat = () => {
 		const glyphsToSave = [];
 
@@ -20,6 +20,9 @@ export default function DragBox({ handleSave }) {
 			});
 		});
 
+		const cat = pngcat;
+		cat.SBOL_Glyphs = glyphsToSave;
+
 		handleSave(glyphsToSave);
 		alert("Your .pnGCAT has been saved!");
 	};
@@ -32,7 +35,23 @@ export default function DragBox({ handleSave }) {
 					<button type="button" id="save-pngcat" onClick={savePngcat}>
 						Save!
 					</button>
-					<Board id="pngcatBoard" className={DragBoxStyle.board}></Board>
+					<Board id="pngcatBoard" className={DragBoxStyle.board}>
+						{pngcat.SBOL_Glyphs.map((g, i) => {
+							return (<Card
+								key={i}
+								id={g.Ontology_Term}
+								className={DragBoxStyle.card}
+								draggable="true"
+							>
+								<img
+									id={g.Ontology_Term}
+									src={`./assets/${g.Ontology_Term}.png`}
+									alt={`${g.Ontology_Term} symbol`}
+									className={DragBoxStyle.image}
+								/>
+							</Card>)
+						})}
+					</Board>
 				</div>
 				{/* <hr /> */}
 				<div className={DragBoxStyle.glyphBox}>
