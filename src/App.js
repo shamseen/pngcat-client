@@ -81,7 +81,7 @@ export default function App() {
                     <Route exact path="/" render={() => <Search />} />
                     <Route exact path="/About" render={() => <About />} />
                     <Route exact path="/Box" render={() => <Box pngcat={activeSeq} handleSave={handleSave} />} />
-                    <Route exact path="/Browse" render={() => <BrowsePngcats getAllPngcats={getAllPngcats} />} />
+                    <Route exact path="/Browse" render={() => <BrowsePngcats getAllPngcats={getAllPngcats} updateState={setActiveSeq} />} />
                 </Switch>
             </Router>
         </DataContext.Provider>

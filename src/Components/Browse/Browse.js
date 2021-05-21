@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../App";
 import * as browseStyle from './Browse.module.css';
 
-export default function BrowsePngcats({ getAllPngcats }) {
+export default function BrowsePngcats({ getAllPngcats, updateState }) {
   const baseUrl = 'https://www.ebi.ac.uk/ena/browser/view';
   const { handleSelectedResult, deletePngcat } = useContext(DataContext);
   const [pngcats, setPngcats] = useState([]);
@@ -14,6 +14,7 @@ export default function BrowsePngcats({ getAllPngcats }) {
 
   const handleDelete = (cat) => {
     deletePngcat(cat._id);
+    updateState({});
     getCats();
   }
 
