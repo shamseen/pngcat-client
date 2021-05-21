@@ -1,5 +1,26 @@
 const baseUrl = 'https://pngcat-api.herokuapp.com';
 
+export const createPngcat = async (pngcat) => {
+    const url = `${baseUrl}/pngcat/`;
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(pngcat)
+        });
+
+        // returning newly created obj to save id to state
+        const json = await response.json();
+        return json;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const deletePngcat = async (id) => {
     const url = `${baseUrl}/pngcat/${id}`;
 
@@ -30,11 +51,11 @@ export const getAllPngcats = async () => {
 }
 
 export const savePngcat = async (pngcat) => {
-    const url = `${baseUrl}/pngcat/`;
+    const url = `${baseUrl}/pngcat/${pngcat._id}`;
 
     try {
         const response = await fetch(url, {
-            method: "POST",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },

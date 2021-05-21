@@ -20,6 +20,9 @@ export default function DragBox({ handleSave, pngcat }) {
 			});
 		});
 
+		const cat = pngcat;
+		cat.SBOL_Glyphs = glyphsToSave;
+
 		handleSave(glyphsToSave);
 		alert("Your .pnGCAT has been saved!");
 	};

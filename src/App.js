@@ -6,6 +6,7 @@ import About from './Components/About/About';
 import Box from './Components/DragBox/DragBox';
 import BrowsePngcats from './Components/Browse/Browse';
 import {
+    createPngcat,
     deletePngcat,
     getAllPngcats,
     savePngcat,
@@ -18,16 +19,28 @@ export default function App() {
     const [searchResults, setResults] = useState([]);
     const [activeSeq, setActiveSeq] = useState({});
 
+    const newpnGKitten = async (newSeq) => {
+        const kit = await createPngcat(newSeq);
+        setActiveSeq(kit)
+    }
+
     const handleSave = (glyphs) => {
         console.log('save clicked');
 
-        // updating state
         const pngcat = activeSeq;
         pngcat["SBOL_Glyphs"] = glyphs;
-        setActiveSeq(pngcat);
 
-        // updating API
-        savePngcat(activeSeq);
+        // use PUT if already has a mongo ID
+        if (activeSeq._id) {
+            savePngcat(pngcat);
+            setActiveSeq(pngcat);
+        }
+
+        // else - CREATE (store _id)
+        else {
+            newpnGKitten(pngcat);
+        }
+
     }
 
 
