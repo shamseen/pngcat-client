@@ -1,5 +1,7 @@
 export default function SearchResults({ result, handleSelect }) {
 
+  const baseUrl = 'https://www.ebi.ac.uk/ena/browser/view';
+
   return (
     <div id="result">
       <hr />
@@ -19,13 +21,13 @@ export default function SearchResults({ result, handleSelect }) {
         </button>
 
       <h4>{result.description}</h4>
-      <span>View on the European Nucleotide Archive:&nbsp;
-        <a href={`https://www.ebi.ac.uk/ena/browser/view/${result.accession}`}>{result.accession}
-        </a></span>
+      <span>
+        View on the European Nucleotide Archive:&nbsp;
+        <a href={`${baseUrl}/${result.accession}`}>{result.accession}</a>
+      </span>
       <h5>
         Publication ID:&nbsp;
-        <a href={`https://www.ebi.ac.uk/ena/browser/view/${result.study_accession}`}>{result.study_accession}
-        </a>
+        <a href={`${baseUrl}/${result.study_accession}`}>{result.study_accession}</a>
       </h5>
     </div>
   )
