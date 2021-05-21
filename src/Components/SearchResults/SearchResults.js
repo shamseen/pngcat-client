@@ -17,7 +17,7 @@ export default function SearchResults({ result, handleSelect }) {
         }}
         type='button'
         id="new-pngcat">
-        Create a new .pnGCAT!
+        Select
         </button>
 
       <h4>{result.description}</h4>

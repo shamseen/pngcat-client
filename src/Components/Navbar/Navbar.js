@@ -12,10 +12,8 @@ const Navbar = () => {
 
             <nav className={navStyle.navbarNav}>
                 <Link className={navStyle.navItem} to="/" exact >Home</Link>
-                <Link className={navStyle.navItem} to="/About">About</Link>
 
                 <div className={navStyle.activeSeq}>
-
                     <span id='seq-id'>Sequence:&nbsp;
                         <a href={`${baseUrl}/${activeSeq.Seq_Accession}`}>
                             {activeSeq.Seq_Accession}
@@ -28,6 +26,9 @@ const Navbar = () => {
                         </a>
                     </span>
                 </div>
+
+                <Link className={navStyle.navItem} to="/Box">Create</Link>
+                <Link className={navStyle.navItem} to="/About">About</Link>
             </nav>
         </header>
     )
