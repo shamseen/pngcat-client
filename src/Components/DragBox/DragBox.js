@@ -22,6 +22,7 @@ export default function DragBox({ handleSave }) {
 		});
 
 		handleSave(glyphsToSave);
+		alert("Your .pnGCAT has been saved!");
 	}
 
 	return (
