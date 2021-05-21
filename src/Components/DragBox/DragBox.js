@@ -51,8 +51,8 @@ export default function DragBox({ handleSave }) {
 								>
 									<img
 										id={glyph}
-										src={`./assets/.png`}
-										alt={` symbol`}
+										src={`./assets/${glyph}.png`}
+										alt={`${glyph} symbol`}
 										className={DragBoxStyle.image}
 									/>
 								</Card>
