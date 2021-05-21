@@ -7,7 +7,7 @@ import * as searchStyle from './Search.module.css'
 
 
 export default function Search() {
-	const { searchAPI, searchResults } = useContext(DataContext);
+	const { handleSearch, searchResults, handleSelectedResult } = useContext(DataContext);
 	const [sequence, setSeq] = useState('');
 	const [study, setStudy] = useState('');
 	const [keyword, setKeyword] = useState('');
@@ -20,7 +20,7 @@ export default function Search() {
 		e.preventDefault();
 
 		// API call
-		searchAPI([sequence, study, keyword]);
+		handleSearch([sequence, study, keyword]);
 	}
 
 	return (
@@ -50,7 +50,10 @@ export default function Search() {
 				<h1>Results</h1>
 				{
 					searchResults.map((res, i) => {
-						return <SearchResults result={res} key={i} />
+						return <SearchResults
+							handleSelect={handleSelectedResult}
+							result={res}
+							key={i} />
 					})
 				}
 			</div>
