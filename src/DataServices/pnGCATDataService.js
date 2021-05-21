@@ -1,6 +1,19 @@
 const baseUrl = 'https://pngcat-api.herokuapp.com';
 
 // const baseUrl = 'http://localhost:8000';
+export const getAllPngcats = async () => {
+    const url = `${baseUrl}/pngcat/all`;
+
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+        return json;
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
 
 export const savePngcat = async (pngcat) => {
     const url = `${baseUrl}/pngcat/`;

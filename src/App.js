@@ -4,8 +4,8 @@ import Search from './Components/Search/Search';
 import Navbar from './Components/Navbar/Navbar';
 import About from './Components/About/About';
 import Box from './Components/DragBox/DragBox';
-import ImageUploader from './Components/ImageUploader/ImageUploader';
-import { savePngcat, searchSequences } from './DataServices/pnGCATDataService';
+import BrowsePngcats from './Components/Browse/Browse';
+import { getAllPngcats, savePngcat, searchSequences } from './DataServices/pnGCATDataService';
 
 export const DataContext = React.createContext();
 
@@ -50,12 +50,11 @@ export default function App() {
 
 
     return (
-
         <DataContext.Provider value={{
             activeSeq,
             handleSelectedResult,
             searchResults,
-            handleSearch
+            handleSearch,
         }}>
             <Router>
                 <Navbar />
@@ -64,6 +63,7 @@ export default function App() {
                     <Route exact path="/About" render={() => <About />} />
                     <Route exact path="/Box" render={() => <Box handleSave={handleSave} />} />
                     <Route exact path="/imageDrag" render={() => <ImageUploader />} />
+                    <Route exact path="/Browse" render={() => <BrowsePngcats getAllPngcats={getAllPngcats} />} />
                 </Switch>
             </Router>
         </DataContext.Provider>
