@@ -5,49 +5,55 @@ import Navbar from './Components/Navbar/Navbar';
 import About from './Components/About/About';
 import Box from './Components/DragBox/DragBox';
 import ImageUploader from './Components/ImageUploader/ImageUploader';
+import { savePngcat, searchSequences } from './DataServices/pnGCATDataService';
 
 export const DataContext = React.createContext();
 
 export default function App() {
-	const [searchResults, setResults] = useState([]);
+    const [searchResults, setResults] = useState([]);
 
-	const getAPI = async () => {
-		try {
-			const response = await fetch('mockpnGCAT.json');
-			const json = await response.json();
-			console.log(json);
+    const handleSave = (glyphs) => {
+        console.log('save clicked');
+        const pngcat = {
+            "Seq_Accession": "someseq",
+            "Study_Accession": "somestudy",
+            "SBOL_Glyphs": glyphs
+        }
 
-			// updating state
-			setResults(json);
+        // console.log(JSON.stringify(pngcat));
 
-			// handling errors
-		} catch (err) {
-			console.log(err);
-		}
-	};
+        savePngcat(pngcat);
+    }
 
-	const handleSubmit = (e) => {
-		console.log('submitted');
-		e.preventDefault();
-		getAPI();
-	};
 
-	return (
-		<DataContext.Provider
-			value={{
-				searchResults,
-				handleSubmit,
-			}}
-		>
-			<Router>
-				<Navbar />
-				<Switch>
-					<Route exact path="/" render={() => <Search />} />
-					<Route exact path="/About" render={() => <About />} />
-					<Route exact path="/Box" render={() => <Box />} />
-					<Route exact path="/imageDrag" render={() => <ImageUploader />} />
-				</Switch>
-			</Router>
-		</DataContext.Provider>
-	);
+    const searchAPI = async (params) => {
+        console.log('submitted');
+
+        try {
+            const json = await searchSequences(...params);
+
+            // updating state
+            setResults(json);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    return (
+
+        <DataContext.Provider value={{
+            searchResults,
+            searchAPI,
+        }}>
+            <Router>
+                <Navbar />
+                <Switch>
+                    <Route exact path="/" render={() => <Search />} />
+                    <Route exact path="/About" render={() => <About />} />
+                    <Route exact path="/Box" render={() => <Box handleSave={handleSave} />} />
+                    <Route exact path="/imageDrag" render={() => <ImageUploader />} />
+                </Switch>
+            </Router>
+        </DataContext.Provider>
+    );
 }

@@ -3,7 +3,6 @@ import React from "react";
 function Board(props) {
 	const drop = (e) => {
 		e.preventDefault();
-
 		// var used to transfer data between event
 		const card_id = e.dataTransfer.getData("card_id");
 
@@ -15,8 +14,6 @@ function Board(props) {
 
 		// dom manipulation to set html to the other board
 		e.target.appendChild(card);
-
-		console.log(e.target);
 	};
 
 	const dragOver = (e) => {
