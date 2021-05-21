@@ -13,7 +13,7 @@ export default function About() {
 					src={shamseen}
 					alt="shamseen"
 					className={aboutStyle.headShot}
-					width="300"
+					width="270"
 				/>
 				<p className={aboutStyle.p}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -48,7 +48,7 @@ export default function About() {
 					src={hengyu}
 					alt="hengyu"
 					className={aboutStyle.headShot}
-					width="400"
+					width="270"
 				/>
 				<p className={aboutStyle.p}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
