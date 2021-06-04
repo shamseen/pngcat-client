@@ -1,7 +1,11 @@
-@use 'variables';
+@use 'vars';
 
-.a {
-  color: #dbedf3;
+* {
+  color: vars.$text-light;
+}
+
+a {
+  color: vars.$text-light;
   text-decoration: none;
 
   &:hover {
@@ -10,10 +14,10 @@
 }
 
 .card {
-  @include flex-col;
+  @include vars.flex-col;
 
   // card shadow
-  border: 1px solid #dbedf3;
+  border: 1px solid vars.$text-light;
   border-radius: 5px;
   box-shadow: 5px 5px 15px rgb(49, 49, 49);
 
