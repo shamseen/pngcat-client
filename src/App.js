@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Search from './Components/Search/Search';
-import Navbar from './Components/Navbar/Navbar';
-import About from './Components/About/About';
-import Box from './Components/DragBox/DragBox';
-import BrowsePngcats from './Components/Browse/Browse';
+import Components from './Components';
 import {
     createPngcat,
     deletePngcat,
@@ -76,12 +72,12 @@ export default function App() {
             deletePngcat
         }}>
             <Router>
-                <Navbar />
+                <Components.Navbar />
                 <Switch>
-                    <Route exact path="/" render={() => <Search />} />
-                    <Route exact path="/About" render={() => <About />} />
-                    <Route exact path="/Box" render={() => <Box pngcat={activeSeq} handleSave={handleSave} />} />
-                    <Route exact path="/Browse" render={() => <BrowsePngcats getAllPngcats={getAllPngcats} updateState={setActiveSeq} />} />
+                    <Route exact path="/" render={() => <Components.Search />} />
+                    <Route exact path="/About" render={() => <Components.About />} />
+                    <Route exact path="/Box" render={() => <Components.DragBox pngcat={activeSeq} handleSave={handleSave} />} />
+                    <Route exact path="/Browse" render={() => <Components.Browse getAllPngcats={getAllPngcats} updateState={setActiveSeq} />} />
                 </Switch>
             </Router>
         </DataContext.Provider>
