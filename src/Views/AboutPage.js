@@ -1,6 +1,6 @@
-import * as aboutStyle from "./About.module.css";
+import * as aboutStyle from "../Components/About/About.module.css";
 
-export default function About() {
+export default function AboutPage() {
 	let shamseen =
 		"https://scontent-bos3-1.xx.fbcdn.net/v/t1.18169-9/269353_4191479743508_760148023_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=de6eea&_nc_ohc=bfxFflmpDPwAX_i_NDg&_nc_ht=scontent-bos3-1.xx&oh=e96c990fa4504d3b7c5eb35f0d23b08e&oe=60CC28D1";
 

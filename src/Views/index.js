@@ -1,3 +1,12 @@
 // TODO: About, Browse, Drag n drop
 
-export { default as HomePage } from './HomePage';
+import AboutPage from './AboutPage';
+import HomePage from './HomePage';
+
+
+const Views = {
+  AboutPage: AboutPage,
+  HomePage: HomePage
+}
+
+export default Views;
