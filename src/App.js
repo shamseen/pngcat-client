@@ -9,6 +9,7 @@ import {
     savePngcat,
     searchSequences
 } from './DataServices/pnGCATDataService';
+import './Styles/App.scss';
 
 export const DataContext = React.createContext();
 
