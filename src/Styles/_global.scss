@@ -1,0 +1,23 @@
+@use 'variables';
+
+.a {
+  color: #dbedf3;
+  text-decoration: none;
+
+  &:hover {
+    color: #b0e6f8;
+  }
+}
+
+.card {
+  @include flex-col;
+
+  // card shadow
+  border: 1px solid #dbedf3;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgb(49, 49, 49);
+
+  // internal sizing
+  margin: 30px;
+  padding: 20px;
+}
