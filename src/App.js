@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Components from './Components';
+import { HomePage } from './Views';
 import {
     createPngcat,
     deletePngcat,
@@ -74,7 +75,7 @@ export default function App() {
             <Router>
                 <Components.Navbar />
                 <Switch>
-                    <Route exact path="/" render={() => <Components.Search />} />
+                    <Route exact path="/" render={() => <HomePage />} />
                     <Route exact path="/About" render={() => <Components.About />} />
                     <Route exact path="/Box" render={() => <Components.DragBox pngcat={activeSeq} handleSave={handleSave} />} />
                     <Route exact path="/Browse" render={() => <Components.Browse getAllPngcats={getAllPngcats} updateState={setActiveSeq} />} />
