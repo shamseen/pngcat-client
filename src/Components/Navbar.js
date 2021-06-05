@@ -8,9 +8,9 @@ const Navbar = () => {
   const baseUrl = 'https://www.ebi.ac.uk/ena/browser/view';
 
   const base_links = [
-    { name: "About", route: '/About' },
-    { name: "Browse", route: '/Browse' },
     { name: "Home", route: '/' },
+    { name: "Browse", route: '/Browse' },
+    { name: "About", route: '/About' },
   ]
 
   console.log(!activeSeq.Seq_Accession);
