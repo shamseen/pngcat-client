@@ -7,6 +7,12 @@ const Navbar = () => {
   const { activeSeq } = useContext(DataContext);
   const baseUrl = 'https://www.ebi.ac.uk/ena/browser/view';
 
+  const base_links = [
+    { name: "About", route: '/About' },
+    { name: "Browse", route: '/Browse' },
+    { name: "Home", route: '/' },
+  ]
+
   console.log(!activeSeq.Seq_Accession);
   return (
     <header>
@@ -22,12 +28,16 @@ const Navbar = () => {
           />
         </div>
         <div id="nav-items-container">
-          <Link className="nav-item" to="/" exact>
-            Home
-					</Link>
-          <Link className="nav-item" to="/Browse">
-            Browse
-					</Link>
+          {base_links.map(l => {
+            return (<Link className="nav-item" to={l.route} exact>
+              {l.name}
+            </Link>)
+          })}
+
+          <Link to="/Box"
+            className={`nav-item${activeSeq.Study_Accession ? null : " disabled-link"}`}>
+            Drag-n-Drop
+							</Link>
 
           {/* user can't enter drag and drop until selecting seqence */}
           {!activeSeq.Study_Accession ? null
@@ -36,10 +46,9 @@ const Navbar = () => {
 							</Link>
           }
 
-          <Link className="nav-item" to="/About">
-            About
-					</Link>
         </div>
+
+        {/* Showing user sequence being worked on*/}
         <div id="active-seq">
           <span id='seq-id'>Sequence:&nbsp;
 						<a href={`${baseUrl}/${activeSeq.Seq_Accession}`}>
