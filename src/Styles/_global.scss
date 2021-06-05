@@ -19,7 +19,7 @@ a {
   // card shadow
   border: 1px solid vars.$text-light;
   border-radius: 5px;
-  box-shadow: 5px 5px 15px rgb(49, 49, 49);
+  box-shadow: vars.$box-shadow;
 
   // internal sizing
   margin: 30px;

@@ -1,0 +1,64 @@
+// @use '../Styles/global';
+@use '../Styles/vars';
+
+@mixin nav-item-hover {
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+  }
+}
+
+/* Containers */
+
+header {
+  font-weight: bolder;
+  background-color: vars.$bg-color-dark;
+  height: 100%;
+}
+
+#logoContainer {
+  margin-right: 5px;
+
+  image {
+    margin-left: 10px;
+  }
+}
+
+nav {
+  @include vars.flex-row;
+  box-shadow: vars.$box-shadow;
+}
+
+#nav-items-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Container items */
+#active-seq {
+  border: vars.$text-light solid 1px;
+  border-radius: 2px;
+
+  padding: 10px 5px;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  // @include vars.flex-row;
+  align-self: center;
+
+  a {
+    padding: 5px;
+    @include nav-item-hover();
+  }
+}
+
+.nav-item {
+  margin: 15px 10px;
+  margin-right: 10px;
+  padding: 2px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @include nav-item-hover();
+}
