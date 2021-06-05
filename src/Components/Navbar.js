@@ -34,18 +34,11 @@ const Navbar = () => {
             </Link>)
           })}
 
+          {/* user can't enter drag and drop until selecting seqence */}
           <Link to="/Box"
             className={`nav-item${activeSeq.Study_Accession ? null : " disabled-link"}`}>
             Drag-n-Drop
-							</Link>
-
-          {/* user can't enter drag and drop until selecting seqence */}
-          {!activeSeq.Study_Accession ? null
-            : <Link className="nav-item" to="/Box">
-              Drag-n-Drop
-							</Link>
-          }
-
+					</Link>
         </div>
 
         {/* Showing user sequence being worked on*/}
