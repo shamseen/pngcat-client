@@ -1,15 +1,17 @@
 import React from "react";
-import Board from "./Board";
-import Card from "./Card";
-import { glyphs as glyphNames } from "./Glyphs";
-import * as DragBoxStyle from "./DragBox.module.css";
+import {
+	DragItem, DragItemContainer,
+	glyphs as glyphNames
+} from "../Components";
+import "../Styles/createPage.scss";
 
-export default function DragBox({ handleSave, pngcat }) {
+export default function CreatePage({ handleSave, pngcat }) {
 	const savePngcat = () => {
 		const glyphsToSave = [];
 
 		// grabbing all images dragged to the second board
 		const cardElements = document.getElementById("pngcatBoard").childNodes;
+		{/* #pngcat */ }
 
 		// storing the glyph names as strings
 		// TO DO: let user label the gene
@@ -28,56 +30,55 @@ export default function DragBox({ handleSave, pngcat }) {
 	};
 
 	return (
-		<div className={DragBoxStyle.DragBox}>
-			<h3 className={DragBoxStyle.header}>Build your .pnGCAT here</h3>
-			<main className={DragBoxStyle.flexbox}>
-				<div className={DragBoxStyle.pngcatBox}>
+		<div id="createPage">
+			<h3>Build your .pnGCAT here</h3>
+			<main>
+
+				<div id='pngcat-container' className="card">
 					<button type="button" id="save-pngcat" onClick={savePngcat}>
 						Save!
 					</button>
-					<Board id="pngcatBoard" className={DragBoxStyle.board}>
+
+					<DragItemContainer id="pngcat" className='drag-items-container'>
 						{pngcat.SBOL_Glyphs.map((g, i) => {
-							return (<Card
+							return (<DragItem
 								key={i}
 								id={g.Ontology_Term}
-								className={DragBoxStyle.card}
 								draggable="true"
 							>
 								<img
 									id={g.Ontology_Term}
 									src={`./assets/${g.Ontology_Term}.png`}
 									alt={`${g.Ontology_Term} symbol`}
-									className={DragBoxStyle.image}
 								/>
-							</Card>)
+							</DragItem>)
 						})}
-					</Board>
+					</DragItemContainer>
 				</div>
 				{/* <hr /> */}
-				<div className={DragBoxStyle.glyphBox}>
-					<Board
-						id="glyphBank"
-						className={`${DragBoxStyle.board} ${DragBoxStyle.glyphBank}`}
-						style={{ overflowY: "scroll" }}
+
+				<div className='glyph-bank-container'>
+					{/* */}
+					<DragItemContainer
+						id="glyph-bank"
+						className='drag-items-container'
 					>
 						{glyphNames.map((glyph, i) => {
 							return (
-								<Card
+								<DragItem
 									key={i}
 									id={glyph}
-									className={DragBoxStyle.card}
 									draggable="true"
 								>
 									<img
 										id={glyph}
 										src={`./assets/${glyph}.png`}
 										alt={`${glyph} symbol`}
-										className={DragBoxStyle.image}
 									/>
-								</Card>
+								</DragItem>
 							);
 						})}
-					</Board>
+					</DragItemContainer>
 				</div>
 			</main>
 		</div>

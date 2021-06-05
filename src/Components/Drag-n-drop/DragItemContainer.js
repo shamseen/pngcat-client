@@ -1,19 +1,19 @@
 import React from "react";
 
-function Board(props) {
+function DragItemContainer(props) {
 	const drop = (e) => {
 		e.preventDefault();
 		// var used to transfer data between event
-		const card_id = e.dataTransfer.getData("card_id");
+		const dragItem_id = e.dataTransfer.getData("dragItem_id");
 
 		// var used to pass the card_id var
-		const card = document.getElementById(card_id);
+		const dragItem = document.getElementById(dragItem_id);
 
 		// makes it look like you picked up the card
-		card.style.display = "block";
+		dragItem.style.display = "block";
 
 		// dom manipulation to set html to the other board
-		e.target.appendChild(card);
+		e.target.appendChild(dragItem);
 	};
 
 	const dragOver = (e) => {
@@ -32,4 +32,4 @@ function Board(props) {
 	);
 }
 
-export default Board;
+export default DragItemContainer;

@@ -1,11 +1,11 @@
 import React from "react";
 
-function Card(props) {
+function DragItem(props) {
 	const dragStart = (e) => {
 		const target = e.target;
 
 		// sets the data of passed card(card_id)
-		e.dataTransfer.setData("card_id", target.id);
+		e.dataTransfer.setData("dragItem_id", target.id);
 
 		// needed so card is not invisible
 		setTimeout(() => {
@@ -23,7 +23,7 @@ function Card(props) {
 	return (
 		<div
 			id={props.id}
-			className={props.className}
+			className='drag-item'
 			draggable={props.draggable}
 			onDragStart={dragStart}
 			onDragOver={dragOver}
@@ -33,4 +33,4 @@ function Card(props) {
 	);
 }
 
-export default Card;
+export default DragItem;
