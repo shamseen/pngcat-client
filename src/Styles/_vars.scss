@@ -11,7 +11,6 @@ $card-width-lg: 80vw;
 $card-width-sm: 40vw;
 
 /* -- Mixins -- */
-
 @mixin custom-scroll-bar($bg, $bar) {
   overflow-y: scroll;
 
@@ -36,9 +35,9 @@ $card-width-sm: 40vw;
   align-items: center;
 }
 
-@mixin flex-row {
+@mixin flex-row($justify: space-between) {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: $justify;
   align-items: center;
 }

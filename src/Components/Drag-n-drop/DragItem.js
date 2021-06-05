@@ -23,7 +23,7 @@ function DragItem(props) {
 	return (
 		<div
 			id={props.id}
-			className={props.className}
+			className='drag-item'
 			draggable={props.draggable}
 			onDragStart={dragStart}
 			onDragOver={dragOver}

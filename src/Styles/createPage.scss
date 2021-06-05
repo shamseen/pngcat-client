@@ -1,0 +1,87 @@
+@use './vars';
+
+/* -- Top level elements -- */
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  @include vars.flex-col;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  padding: 15px;
+
+  div {
+    @include vars.flex-row(center);
+  }
+}
+
+.drag-items-container {
+  @include vars.flex-row(center);
+  align-content: center;
+
+  background-color: vars.$bg-color-dark;
+  border-radius: 5px;
+  box-shadow: vars.$box-shadow;
+
+  height: 20vh;
+  width: 100%;
+  max-width: 768px;
+
+  margin: 30px;
+  padding: 15px;
+}
+
+/* -- Specific elements -- */
+h3 {
+  text-align: center;
+  font-size: x-large;
+  margin-top: 20x;
+  margin-bottom: -10px;
+}
+
+button {
+  margin-top: 2em;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-bottom: -10px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+
+  background-color: vars.$bg-color-dark;
+
+  font-size: 15px;
+  width: 30%;
+  max-width: 768px;
+  line-height: 30px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: vars.$bg-color-hover;
+  }
+}
+
+.drag-item {
+  background-color: white;
+  border-radius: 5px;
+  cursor: grab;
+  margin: 15px;
+  padding: 15x 25px;
+}
+
+#glyph-bank {
+  height: 40vh;
+  margin: 30px;
+
+  overflow-y: scroll;
+}
+
+#pngcat-container {
+  @include vars.flex-row(center);
+  align-content: center;
+}
