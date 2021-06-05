@@ -1,5 +1,4 @@
-// import Search from './Search/Search';
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./Navbar";
 import DragBox from "./DragBox/DragBox";
 
 // to use separately like in HomePage
