@@ -2,6 +2,7 @@
 $bg-color-dark: #283149;
 $bg-color-light: #404b69;
 $bg-color-med: #283149a1;
+$bg-color-hover: #2f3957;
 $text-light: #dbedf3;
 
 /* -- Sizing -- */
@@ -11,25 +12,25 @@ $card-width-sm: 40vw;
 /* -- Mixins -- */
 
 @mixin custom-scroll-bar($bg, $bar) {
-  overflow-y: scroll;
+	overflow-y: scroll;
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    background-color: $bar;
-  }
+	&::-webkit-scrollbar {
+		width: 8px;
+		background-color: $bar;
+	}
 
-  &::-webkit-scrollbar-thumb {
-    background-color: $bar;
-    border-radius: 3px;
-  }
+	&::-webkit-scrollbar-thumb {
+		background-color: $bar;
+		border-radius: 3px;
+	}
 
-  &::-webkit-scrollbar-track {
-    background-color: $bg;
-  }
+	&::-webkit-scrollbar-track {
+		background-color: $bg;
+	}
 }
 
 @mixin flex-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

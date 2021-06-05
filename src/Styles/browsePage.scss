@@ -1,0 +1,47 @@
+@use "vars";
+@use "global";
+
+.browserBox {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+#browseContainer {
+	width: 50vw;
+	height: 60vh;
+}
+
+.browseItem {
+	margin: 10px 15px;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.browseBtns {
+	display: flex;
+	flex-flow: row nowrap;
+	button {
+		font-size: 15px;
+		padding: 15px 32px;
+		border-radius: 5px;
+		margin: 2px;
+		border: none;
+	}
+}
+
+.deleteBtn {
+	color: #dbedf3;
+	background-color: vars.$bg-color-dark;
+	&:hover {
+		background-color: vars.$bg-color-hover;
+	}
+}
+
+.selectBtn {
+	color: vars.$bg-color-hover;
+	background-color: vars.$text-light;
+	&:hover {
+		background-color: #dbedf37e;
+	}
+}

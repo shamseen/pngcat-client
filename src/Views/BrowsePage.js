@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../App";
-import * as browseStyle from "./Browse.module.css";
+import { DataContext } from "../App";
+import "../Styles/browsePage.scss";
 
 export default function BrowsePngcats({ getAllPngcats, updateState }) {
 	const baseUrl = "https://www.ebi.ac.uk/ena/browser/view";
@@ -23,12 +23,12 @@ export default function BrowsePngcats({ getAllPngcats, updateState }) {
 	}, []);
 
 	return (
-		<div className={browseStyle.browserBox}>
-			<div className={browseStyle.browseContainer}>
+		<div className="browserBox">
+			<div className="card" id="brownsContainer">
 				{pngcats.map((cat, i) => {
 					return (
 						<div className="browseItemContainer">
-							<div className={browseStyle.browseItem} key={i}>
+							<div className="browseItem" key={i}>
 								<div className="browseText">
 									<h3>{cat.Seq_Accession}</h3>
 									<span>
@@ -40,12 +40,12 @@ export default function BrowsePngcats({ getAllPngcats, updateState }) {
 								<div className="browseBtns">
 									<button
 										onClick={() => handleSelectedResult(cat)}
-										className={`${browseStyle.browseBtn} ${browseStyle.selectBtn}`}
+										className="selectBtn"
 									>
 										Select
 									</button>
 									<button
-										className={`${browseStyle.browseBtn} ${browseStyle.deleteBtn}`}
+										className="deleteBtn"
 										onClick={() => handleDelete(cat)}
 									>
 										Delete
