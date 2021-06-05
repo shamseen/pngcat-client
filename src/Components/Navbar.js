@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import "../Styles/navbar.scss";
 import { useContext } from 'react';
 import { DataContext } from '../App';
+import "../Styles/navbar.scss";
 
 const Navbar = () => {
   const { activeSeq } = useContext(DataContext);

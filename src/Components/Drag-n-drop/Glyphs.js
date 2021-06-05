@@ -1,4 +1,4 @@
-export const glyphs = [
+const glyphs = [
     "polyA",
     "polypeptide-region",
     "primer-binding-site",
@@ -65,3 +65,5 @@ export const glyphs = [
     "origin-of-replication",
     "origin-of-transfer"
 ]
+
+export default glyphs;

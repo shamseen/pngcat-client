@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Components from "./Components";
+import { Navbar } from "./Components";
 import Views from "./Views";
 import {
 	createPngcat,
@@ -73,7 +73,7 @@ export default function App() {
 			}}
 		>
 			<Router>
-				<Components.Navbar />
+				<Navbar />
 				<Switch>
 					<Route exact path="/" render={() => <Views.HomePage />} />
 					<Route exact path="/About" render={() => <Views.AboutPage />} />
@@ -81,7 +81,7 @@ export default function App() {
 						exact
 						path="/Box"
 						render={() => (
-							<Components.DragBox pngcat={activeSeq} handleSave={handleSave} />
+							<Views.CreatePage pngcat={activeSeq} handleSave={handleSave} />
 						)}
 					/>
 					<Route

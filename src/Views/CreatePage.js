@@ -1,10 +1,11 @@
 import React from "react";
-import Board from "./Board";
-import Card from "./Card";
-import { glyphs as glyphNames } from "./Glyphs";
-import * as DragBoxStyle from "./DragBox.module.css";
+import {
+	DragItem, DragItemContainer,
+	glyphs as glyphNames
+} from "../Components";
+import * as DragBoxStyle from "../Styles/DragBox.module.css";
 
-export default function DragBox({ handleSave, pngcat }) {
+export default function CreatePage({ handleSave, pngcat }) {
 	const savePngcat = () => {
 		const glyphsToSave = [];
 
@@ -35,9 +36,9 @@ export default function DragBox({ handleSave, pngcat }) {
 					<button type="button" id="save-pngcat" onClick={savePngcat}>
 						Save!
 					</button>
-					<Board id="pngcatBoard" className={DragBoxStyle.board}>
+					<DragItemContainer id="pngcatBoard" className={DragBoxStyle.board}>
 						{pngcat.SBOL_Glyphs.map((g, i) => {
-							return (<Card
+							return (<DragItem
 								key={i}
 								id={g.Ontology_Term}
 								className={DragBoxStyle.card}
@@ -49,20 +50,20 @@ export default function DragBox({ handleSave, pngcat }) {
 									alt={`${g.Ontology_Term} symbol`}
 									className={DragBoxStyle.image}
 								/>
-							</Card>)
+							</DragItem>)
 						})}
-					</Board>
+					</DragItemContainer>
 				</div>
 				{/* <hr /> */}
 				<div className={DragBoxStyle.glyphBox}>
-					<Board
+					<DragItemContainer
 						id="glyphBank"
 						className={`${DragBoxStyle.board} ${DragBoxStyle.glyphBank}`}
 						style={{ overflowY: "scroll" }}
 					>
 						{glyphNames.map((glyph, i) => {
 							return (
-								<Card
+								<DragItem
 									key={i}
 									id={glyph}
 									className={DragBoxStyle.card}
@@ -74,10 +75,10 @@ export default function DragBox({ handleSave, pngcat }) {
 										alt={`${glyph} symbol`}
 										className={DragBoxStyle.image}
 									/>
-								</Card>
+								</DragItem>
 							);
 						})}
-					</Board>
+					</DragItemContainer>
 				</div>
 			</main>
 		</div>

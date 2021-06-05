@@ -1,12 +1,8 @@
-import Navbar from "./Navbar";
-import DragBox from "./DragBox/DragBox";
+// treeshaking each individual component
 
-// to use separately like in HomePage
+
+export { default as DragItem } from "./Drag-n-drop/DragItem";
+export { default as DragItemContainer } from "./Drag-n-drop/DragItemContainer";
+export { default as glyphs } from "./Drag-n-drop/Glyphs"
+export { default as Navbar } from "./Navbar";
 export { default as Search } from "./Search/Search";
-
-const Components = {
-	Navbar: Navbar,
-	DragBox: DragBox,
-};
-
-export default Components;
