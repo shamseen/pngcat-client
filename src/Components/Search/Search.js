@@ -29,6 +29,7 @@ export default function Search() {
 				<form onSubmit={handleSubmit}>
 					Sequence Id:{" "}
 					<SearchTextInput
+						id="search-seq-id"
 						className={searchStyle.input}
 						state={sequence}
 						updateState={setSeq}
@@ -37,6 +38,7 @@ export default function Search() {
 					<br />
 					Publication Id:{" "}
 					<SearchTextInput
+						id='search-pub-id'
 						className={searchStyle.input}
 						state={study}
 						updateState={setStudy}
@@ -45,6 +47,7 @@ export default function Search() {
 					<br />
 					Keyword:{" "}
 					<SearchTextInput
+						id='search-keyword'
 						className={searchStyle.input}
 						state={keyword}
 						updateState={setKeyword}
@@ -53,6 +56,7 @@ export default function Search() {
 					<br />
 					<div className={searchStyle.btnContainer}>
 						<input
+							id='search-btn'
 							type="submit"
 							value="Search"
 							className={searchStyle.searchBtn}
@@ -62,7 +66,7 @@ export default function Search() {
 			</div>
 			{/* ------- Results --------- */}
 			<div className={searchStyle.resultContainer}>
-				<h2 className={searchStyle.header}>Results</h2>
+				<h2 id='results-heading' className={searchStyle.header}>Results</h2>
 				{searchResults.map((res, i) => {
 					return (
 						<SearchResults
