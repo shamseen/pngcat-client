@@ -12,14 +12,14 @@ https://codesandbox.io/s/introjs-react-example-forked-n8yjj?file=/App.js
 */
 
 export default function Tutorial() {
-  const { handleSearch, searchResults, handleSelectedResult } = useContext(DataContext);
+  const { handleSearch, searchResults } = useContext(DataContext);
 
   /* -- State Vars -- */
-  const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(false);
 
   const [steps] = useState([
     {
-      element: "#search-btn",
+      element: "#start-tutorial",
       intro: "btn"
     },
     {
@@ -116,6 +116,9 @@ export default function Tutorial() {
 
   return (
     <div>
+      <button type="button" id="start-tutorial" class="tutorial-btn" onClick={() => setEnabled(true)}>
+        Tutorial
+      </button>
       <Steps
         enabled={enabled}
         steps={steps}

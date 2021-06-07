@@ -17,9 +17,7 @@ a {
   @include vars.flex-col;
 
   // card shadow
-  border: 1px solid vars.$text-light;
-  border-radius: 5px;
-  box-shadow: vars.$box-shadow;
+  @include vars.shadow-boxing;
 
   // internal sizing
   margin: 30px;

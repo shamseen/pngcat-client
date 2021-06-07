@@ -41,3 +41,9 @@ $card-width-sm: 40vw;
   justify-content: $justify;
   align-items: center;
 }
+
+@mixin shadow-boxing() {
+  border: 1px solid $text-light;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+}

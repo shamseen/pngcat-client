@@ -9,21 +9,8 @@ export default function HomePage() {
 
   return (
     <div id="homepage">
-      <Search />
-      {/* TO DO: mock search results */}
-
       <Tutorial />
-
-      {/* TO DO: show tutorial if button is pressed */}
-
-      {/* <div className="card">
-        <button
-          onClick={() => startTutorial(true)}
-          id="tutorial-btn">
-          Tutorial
-        </button>
-      </div>
-      {runTutorial ? <Tutorial runTutorial={startTutorial} /> : null} */}
+      <Search />
     </div>
   )
 }
