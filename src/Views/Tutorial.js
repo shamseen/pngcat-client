@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Steps, Hints } from "intro.js-react";
 import { DataContext } from "../App";
 
@@ -12,18 +12,17 @@ https://codesandbox.io/s/introjs-react-example-forked-n8yjj?file=/App.js
 */
 
 export default function Tutorial() {
-  const { handleSearch, searchResults } = useContext(DataContext);
+  const { handleSearch, searchResults, setResults } = useContext(DataContext);
 
   /* -- State Vars -- */
+  const tutorialRef = useRef(null) // for dynamically rendered elements
+
   const [enabled, setEnabled] = useState(false);
 
   const [steps] = useState([
     {
-      element: "#start-tutorial",
-      intro: "btn"
-    },
-    {
-      intro: "Welcome! To start off, let's find an existing sequence in the European Nucleotide Archive."
+      element: "#nav-Browse",
+      intro: "You can browse and edit existing diagrams (aka .pnGCATs) here. But first let's build one from an existing sequence in the European Nucleotide Archive!"
     },
     {
       element: "#search-keyword",
@@ -31,16 +30,25 @@ export default function Tutorial() {
     },
     {
       element: "#results-container",
-      intro: "results"
+      intro: "Let's dissect the results."
     },
     {
-      element: "#link-LT962381",
-      intro: "links"
+      element: ".result-links",
+      intro: "We have links to their ENA records."
     },
     {
-      element: "#result-LT962382 > #new-pngcat",
-      intro: "select"
-    }
+      element: "#new-pngcat-PNGCAT1",
+      intro: "Let's select our example result.",
+      position: 'top'
+    },
+    {
+      element: "#active-seq",
+      intro: "Notice the ID numbers and links"
+    },
+    {
+      element: "#nav-create",
+      intro: "All ready to go! Click here build a diagram!"
+    },
   ]);
 
   const [hints] = useState([
@@ -61,7 +69,7 @@ export default function Tutorial() {
     hidePrev: true, // on first step
     showProgress: true, // progress bar
     showBullets: false, // those lil progress dots
-    showStepNumber: false,
+    showStepNumbers: false,
     skipLabel: "Exit (esc)"
   };
 
@@ -70,13 +78,13 @@ export default function Tutorial() {
     const mock = [
       {
         accession: 'PNGCAT1',
-        study_accession: 'PRJNA01234',
-        description: 'A sample somatostatin sequence with no .pnGCAT!',
+        study_accession: 'PRJNA1',
+        description: 'A sample somatostatin sequence with no .pnGCAT! :o',
         SBOL_Glyphs: [],
       },
       {
         accession: 'PNGCAT2',
-        study_accession: 'PRJNA56789',
+        study_accession: 'PRJNA2',
         description: 'A sample somatostatin sequence with an existing .pnGCAT!',
         SBOL_Glyphs: [
           {
@@ -95,19 +103,30 @@ export default function Tutorial() {
       },
     ];
 
-    searchResults.unshift(...mock);
+    const newResults = [...searchResults];
+    newResults.unshift(...mock);
+    setResults(newResults);
     console.log(searchResults);
   }
 
-  const onStepChange = (step) => {
+  // doing stuff before certain things are highlighted
+  const onStepChange = (next) => {
 
-    switch (step) {
-      case 3:
+    switch (next) {
+      // filling search results before highlighting container
+      case 2:
         handleSearch(['', '', 'soma']);
         return;
 
-      case 4:
+      // adding dynamically rendered result before highlighting links
+      case 3:
+        tutorialRef.current.updateStepElement(next);
         mockResults();
+        return;
+
+      case 4: case 6:
+        tutorialRef.current.updateStepElement(next);
+        return;
 
       default: return;
     }
@@ -116,14 +135,15 @@ export default function Tutorial() {
 
   return (
     <div>
-      <button type="button" id="start-tutorial" class="tutorial-btn" onClick={() => setEnabled(true)}>
+      <button type="button" id="start-tutorial" className="tutorial-btn" onClick={() => setEnabled(true)}>
         Tutorial
       </button>
       <Steps
         enabled={enabled}
         steps={steps}
-        initialSetup={0}
-        onAfterChange={onStepChange} // add fake search results
+        ref={tutorialRef}
+        initialStep={0}
+        onBeforeChange={onStepChange} // add fake search results
         onComplete={() => setEnabled(false)}
         onExit={() => setEnabled(false)}
         options={config}

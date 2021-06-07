@@ -36,7 +36,7 @@ export default function CreatePage({ handleSave, pngcat }) {
 
 				<div id='pngcat-container' className="card">
 					<button type="button" id="save-pngcat" onClick={savePngcat}>
-						Save!
+						Save .pnGCAT!
 					</button>
 
 					<DragItemContainer id="pngcat" className='drag-items-container'>

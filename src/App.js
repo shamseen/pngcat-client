@@ -72,6 +72,7 @@ export default function App() {
 				activeSeq,
 				handleSelectedResult,
 				searchResults,
+				setResults,
 				handleSearch,
 				deletePngcat,
 			}}
