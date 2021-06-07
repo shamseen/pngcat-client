@@ -12,7 +12,7 @@ https://codesandbox.io/s/introjs-react-example-forked-n8yjj?file=/App.js
 */
 
 export default function Tutorial() {
-  const { handleSearch, searchResults, setResults } = useContext(DataContext);
+  const { handleSearch, handleSelectedResult, searchResults, setResults } = useContext(DataContext);
 
   /* -- State Vars -- */
   const tutorialRef = useRef(null) // for dynamically rendered elements
@@ -127,6 +127,12 @@ export default function Tutorial() {
       case 4: case 6:
         tutorialRef.current.updateStepElement(next);
         return;
+
+      case 5: handleSelectedResult({
+        "Seq_Accession": searchResults[0].accession,
+        "Study_Accession": searchResults[0].study_accession,
+        "SBOL_Glyphs": []
+      });
 
       default: return;
     }
