@@ -29,13 +29,14 @@ const Navbar = () => {
         </div>
         <div id="nav-items-container">
           {base_links.map(l => {
-            return (<Link className="nav-item" to={l.route} exact>
+            return (<Link className="nav-item" to={l.route} id={"nav-" + l.name} exact>
               {l.name}
             </Link>)
           })}
 
           {/* user can't enter drag and drop until selecting seqence */}
           <Link to="/Box"
+            id='nav-create'
             className={`nav-item${activeSeq.Study_Accession ? null : " disabled-link"}`}>
             Drag-n-Drop
 					</Link>

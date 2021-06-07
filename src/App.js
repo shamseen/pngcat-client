@@ -15,6 +15,7 @@ export const DataContext = React.createContext();
 
 export default function App() {
 	const [searchResults, setResults] = useState([]);
+	const [tutorialResults, setTutorialResults] = useState([]);
 	const [activeSeq, setActiveSeq] = useState({});
 
 	const newpnGKitten = async (newSeq) => {
@@ -46,6 +47,9 @@ export default function App() {
 		try {
 			const json = await searchSequences(...params);
 
+			// // adding mocked results for tutorial (if any)
+			// json.push(...tutorialResults);
+
 			// updating state
 			setResults(json);
 
@@ -68,6 +72,7 @@ export default function App() {
 				activeSeq,
 				handleSelectedResult,
 				searchResults,
+				setResults,
 				handleSearch,
 				deletePngcat,
 			}}

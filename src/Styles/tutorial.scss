@@ -1,0 +1,66 @@
+@use './vars';
+@use './global';
+
+.card {
+  background-color: vars.$bg-color-light;
+
+  letter-spacing: 1px;
+  height: fit-content;
+  margin: inherit;
+}
+
+// element highlight
+.introjs-helperLayer {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.introjs-progress {
+  margin-top: 1.5em;
+}
+
+.introjs-tooltipbuttons {
+  min-height: fit-content;
+  margin-top: 1em;
+}
+
+#start-tutorial {
+  background-color: vars.$bg-color-dark;
+
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 30px;
+
+  position: relative;
+  left: 15%;
+
+  height: fit-content;
+  width: 70%;
+
+  // shadow
+  @include vars.shadow-boxing;
+
+  &:hover {
+    background-color: vars.$bg-color-hover;
+  }
+}
+
+.tutorial-btn {
+  margin: 0.5em;
+  margin-top: 2em;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+
+  background-color: vars.$bg-color-dark;
+
+  font-size: 15px;
+  width: 30%;
+  max-width: 768px;
+  line-height: 30px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: vars.$bg-color-hover;
+  }
+}
