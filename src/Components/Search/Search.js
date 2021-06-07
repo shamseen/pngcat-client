@@ -11,7 +11,7 @@ export default function Search() {
 	const [study, setStudy] = useState("");
 	const [keyword, setKeyword] = useState("");
 
-	useEffect(async () => { }, []);
+	useEffect(async () => { }, [searchResults]);
 
 	const handleSubmit = (e) => {
 		// preventing page reset
@@ -28,35 +28,38 @@ export default function Search() {
 				{/* ------- Search form --------- */}
 				<form onSubmit={handleSubmit}>
 					Sequence Id:{" "}
-					<SearchTextInput
-						id="search-seq-id"
-						className={searchStyle.input}
-						state={sequence}
-						updateState={setSeq}
-						placeholder="CP034527"
-					/>
+					<div id="search-seq-id">
+						<SearchTextInput
+							id="search-seq-id"
+							className={searchStyle.input}
+							state={sequence}
+							updateState={setSeq}
+							placeholder="CP034527"
+						/>
+					</div>
 					<br />
 					Publication Id:{" "}
-					<SearchTextInput
-						id='search-pub-id'
-						className={searchStyle.input}
-						state={study}
-						updateState={setStudy}
-						placeholder="PRJNA504496"
-					/>
+					<div id="search-pub-id">
+						<SearchTextInput
+							className={searchStyle.input}
+							state={study}
+							updateState={setStudy}
+							placeholder="PRJNA504496"
+						/>
+					</div>
 					<br />
 					Keyword:{" "}
-					<SearchTextInput
-						id='search-keyword'
-						className={searchStyle.input}
-						state={keyword}
-						updateState={setKeyword}
-						placeholder="somatostatin"
-					/>
+					<div id="search-keyword">
+						<SearchTextInput
+							className={searchStyle.input}
+							state={keyword}
+							updateState={setKeyword}
+							placeholder="somatostatin"
+						/>
+					</div>
 					<br />
-					<div className={searchStyle.btnContainer}>
+					<div id='search-btn' className={searchStyle.btnContainer}>
 						<input
-							id='search-btn'
 							type="submit"
 							value="Search"
 							className={searchStyle.searchBtn}
@@ -65,7 +68,7 @@ export default function Search() {
 				</form>
 			</div>
 			{/* ------- Results --------- */}
-			<div className={searchStyle.resultContainer}>
+			<div id="results-container" className={searchStyle.resultContainer}>
 				<h2 id='results-heading' className={searchStyle.header}>Results</h2>
 				{searchResults.map((res, i) => {
 					return (

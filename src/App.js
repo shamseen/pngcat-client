@@ -47,11 +47,11 @@ export default function App() {
 		try {
 			const json = await searchSequences(...params);
 
-			// adding mocked results for tutorial (if any)
-			json.push(...tutorialResults);
+			// // adding mocked results for tutorial (if any)
+			// json.push(...tutorialResults);
 
 			// updating state
-			setResults(json.append);
+			setResults(json);
 
 			// catching any errors
 		} catch (e) {

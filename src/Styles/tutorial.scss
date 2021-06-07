@@ -3,10 +3,27 @@
 
 .card {
   background-color: vars.$bg-color-light;
+
+  letter-spacing: 1px;
   height: fit-content;
   margin: inherit;
 }
-a {
+
+// element highlight
+.introjs-helperLayer {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.introjs-progress {
+  margin-top: 1.5em;
+}
+
+.introjs-tooltipbuttons {
+  min-height: fit-content;
+  margin-top: 1em;
+}
+
+.tutorial-btn {
   margin: 0.5em;
   margin-top: 2em;
   padding: 5px 10px;
@@ -24,18 +41,4 @@ a {
   &:hover {
     background-color: vars.$bg-color-hover;
   }
-}
-
-// element highlight
-.introjs-helperLayer {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.introjs-progress {
-  margin-top: 1.5em;
-}
-
-.introjs-tooltipbuttons {
-  min-height: fit-content;
-  margin-top: 1em;
 }
