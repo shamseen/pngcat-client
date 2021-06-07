@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Steps, Hints } from "intro.js-react";
 
 import "intro.js/introjs.css";
+import "../Styles/tutorial.scss";
 
 
 /* -- Sources
@@ -37,13 +38,17 @@ export default function Tutorial() {
   ]);
 
   const config = {
-    helperElementPadding: 20,
+    // styling
+    buttonClass: "tutorial-btn",
+    tooltipClass: 'card',
+
+    // content
     hideNext: true, // on last step
     hidePrev: true, // on first step
     showProgress: true, // progress bar
     showBullets: false, // those lil progress dots
     showStepNumber: false,
-    skipLabel: "Exit"
+    skipLabel: "Exit (esc)"
   };
 
   /* -- Functions -- */
