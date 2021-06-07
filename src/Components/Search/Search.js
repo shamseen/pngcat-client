@@ -70,15 +70,8 @@ export default function Search() {
 			{/* ------- Results --------- */}
 			<div id="results-container" className={searchStyle.resultContainer}>
 				<h2 id='results-heading' className={searchStyle.header}>Results</h2>
-				{searchResults.map((res, i) => {
-					return (
-						<SearchResults
-							handleSelect={handleSelectedResult}
-							result={res}
-							key={i}
-						/>
-					);
-				})}
+
+				<SearchResults results={searchResults} handleSelect={handleSelectedResult} />
 			</div>
 		</div>
 	);
